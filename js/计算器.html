@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /* th,tr{
+        width: 40px;
+        height: 40px;
+        background-color: antiquewhite;
+        border-radius: 50%;
+
+       } */
+       input{
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+       }
+       .btn{
+        width: 50px;
+        height: 50px;
+        border-color: 888;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+         /* 鼠标变成手指 */
+        cursor: pointer;
+       }
+       .div.btn-group{
+        display: flex;
+               }
+    </style>
+</head>
+<body>
+<div class="j1">
+    算式:
+    <input type="text">
+</div>
+<div class="j2">
+    结果:
+    <input type="text">
+</div>
+<div class="btn">C</div>
+<div class="btn">CE</div>
+<div class="btn"></div>
+<div class="btn"></div>
+<div class="btn">1</div>
+<div class="btn">2</div>
+<div class="btn">3</div>
+<div class="btn">+</div>
+<div class="btn">4</div>
+<div class="btn">5</div>
+<div class="btn">6</div>
+<div class="btn">-</div>
+<div class="btn">7</div>
+<div class="btn">8</div>
+<div class="btn">9</div>
+<div class="btn">*</div>
+<div class="btn">/</div>
+<div class="btn">0</div>
+<div class="btn">.</div>
+<div class="btn">=</div>
+
+
+    <script>
+        let suanshi = prompt("请输入算式")
+        let jieguo 
+        var btn = document.getElementById("btn");
+        btn.onclick=function(){
+            alert(`您输入的是${suanshi}算式`)
+        }
+        
+
+    </script>
+</body>
+</html>
