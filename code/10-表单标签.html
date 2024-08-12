@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./03.css">
 </head>
 
 <body>
     <form>
         <input type="text" name="username" placeholder="请输入用户名">
         </input>
-        <div>姓名: <input type="text"></div>
-        <div>年龄: <input type="text"></div>
-        </div>账号：<input type="text"></div>
+        <div>姓名: <input type="text" name="name"></div>
+        <div>年龄: <input type="text" name="age" readonly placeholder=""></div>
+        </div>账号：<input type="text" name=" admin"></div>
         <div>密码：<input type="password"></div>
         <div> 性别：
             <input type="radio" name="sex" value="男">男</input>
@@ -24,19 +25,19 @@
             <input type="checkbox" name="hobby" value="篮球">篮球</input>
             <input type="checkbox" name="hobby" value="游泳">游泳</input>
             <input type="checkbox" name="hobby" value="跑步">跑步</input>
-            <input type="checkbox" name="hobby" value="爬山">爬山</input>
+            <input type="checkbox" name="hobby" value="爬山" checked>爬山</input>
 
         </div>
         <div>
             地址：
-            <select name="" id="">
-                <option>北京</option>
-                <option>上海</option>
-                <option>广州</option>
-                <option>深圳</option>
-                <option>杭州</option>
-                <option>天津</option>
-                <option>重庆</option>
+            <select name="address" id="" multiple>
+                <option value="">北京</option>
+                <option value="">上海</option>
+                <option value="">广州</option>
+                <option value="" selected>深圳</option>
+                <option value="">杭州</option>
+                <option value="">天津</option>
+                <option value="">重庆</option>
 
             </select>
         </div>

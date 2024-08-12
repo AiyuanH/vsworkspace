@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    表单提交的方式get和post
+        action 用于指定提交到哪里
+        method 指定提交方式
+        
+        get方式
+            get方式提交数据
+                1.get方式提交数据不会被保存到服务器
+                2.get方式提交的数据会显示在url后面
+                3.get方式提交的数据大小有限制
+                4.get方式提交的数据不安全
+                5.get方式提交的数据可以被缓存
+                6.get方式提交的数据可以被搜索引擎收录
+        post方式
+            post方式提交数据
+                1.post方式提交数据会被保存到服务器
+                2.post方式提交的数据不会显示在url后面
+                3.post方式提交的数据大小无限制
+                4.post方式提交的数据安全
+                5.post方式提交的数据不可以被缓存
+                6.post方式提交的数据不可以被搜索引擎收录
+
+
+
+            提交的表单得加name属性
+            让用户选择的得加给出的value
+            select标签的option没写value属性会将option的文本作为value
+    -->
+                <form action="#" method="get">
+                    <div>
+                        <input type="file" name="文件" id="">
+                    </div>
+                    <div>隐藏： <input type="text" name="aaa"></div>
+                    <div>： <input type="datetime-local"></div>
+
+                    <div>
+                        <input type="checkbox" name="hobby" value="足球">足球</input>
+                        <input type="checkbox" name="hobby" value="篮球">篮球</input>
+                        <input type="checkbox" name="hobby" value="游泳">游泳</input>
+                        <input type="checkbox" name="hobby" value="跑步">跑步</input>
+                        <input type="checkbox" name="hobby" value="爬山">爬山</input>
+            
+                    </div>
+        
+
+                    <div>
+                        地址：
+                        <select name="address"  id="">
+                            <option>北京</option>
+                            <option>上海</option>
+                            <option>广州</option>
+                            <option>深圳</option>
+                            <option>杭州</option>
+                            <option>天津</option>
+                            <option>重庆</option>
+            
+                        </select>
+                    </div>
+                    <div>
+                        描述： <textarea  cols="30" rows="10"></textarea>
+                        <!-- <textarea name" id="" cols="30" rows="10"> </textarea> -->
+                    </div>
+                    <div>
+                        <input type="button" value="提交">
+                        <!-- <button>嘿嘿</button> 注释快捷键ctrl + k+ c 取消注释快捷键ctrl + k+ u --> 
+                    </div>
+                    <div>
+                        <button>登录</button>
+            
+            
+                </form>
+    
+           
+    
+</body>
+</html>
