@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* background-image: url(./img/1.jpg); */
+            /* background-repeat: no-repeat; */
+            /* background-position: center; */
+            /* background-position: 50% 50%; */
+            /* background-position: 50% 50% 50% 50%; */
+        }
+        .box2{
+            text-indent: -2em;
+        }
+        .box3{
+            /* 文本超出宽度之后显示...隐藏效果 
+                clip:文本超出宽度之后显示...隐藏效果
+                ellipsis:文本超出宽度之后显示...隐藏效果
+                clip-path:文本超出宽度之后显示...隐藏效果
+            */
+            text-overflow: clip;
+            /* 禁止文字换行 */
+            white-space: nowrap;
+            /* 超出隐藏 */
+            overflow: hidden;
+            /* width: 500px; */
+            text-shadow: 2px,2px,3pxred;
+            
+            
+            /*文本的阴影*/
+        }
+    </style>
+</head>
+<body>
+    <div> 
+        <p class="box2">asddddddddddddddddd</p>
+        <h1 class="box3">asdddddddddddd啊顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶ddddd</h1>
+    </div>
+</body>
+</html>

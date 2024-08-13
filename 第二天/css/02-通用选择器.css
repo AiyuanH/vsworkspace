@@ -1,0 +1,17 @@
+/*id不建议重复*/
+        *{
+            margin: 0;
+            color: aquamarine;
+        }
+        p{
+            color:black;
+        }
+        #h{
+            font-size: 20px;
+            color: red;
+        }
+        .y{
+            font-style: oblique;
+            color: blue;;
+        }
+   
