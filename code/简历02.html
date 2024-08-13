@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        width: 700px;
+        border-collapse: collapse;
+        text-align: center;
+        margin: 0 auto; /* 使表格水平居中 */
+    }
+   
+
+    td {
+        text-align: center;
+        width: 100px;
+        border: 1px solid rgb(211, 176, 176);
+        /* 添加边框 */
+        padding: 7px;
+        /* 添加内边距 */
+    }
+    h1{
+        text-align: center; /* 使标题居中 */
+        color: cadetblue;
+    }
+
+    .td1 {
+        height: 100px;
+    }
+
+    .font {
+        font-size: 18px;
+        color: rgb(87, 131, 116);
+    }
+
+    .font1 {
+        font-size: 16px;
+        color: black;
+    }
+</style>
+
+<body>
+
+    <h1 >自我简介</h1>
+    <table border="1" cellspacing="0" cellpadding="0" class="font">
+
+        <tr>
+            <td>姓名</td>
+            <td class="font1">侯宇博</td>
+            <td>性别</td>
+            <td class="font1">男</td>
+            <td>民族</td>
+            <td class="font1">汉</td>
+            <td rowspan="4"><img
+                    src="data:image/jpeg;base64,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"
+                    width="100px"></td>
+        </tr>
+        <tr>
+            <td>出生日期</td>
+            <td class="font1">2003.0924</td>
+            <td>籍贯</td>
+            <td class="font1">河北</td>
+            <td>政治面貌</td>
+            <td class="font1">团员</td>
+
+        </tr>
+        <tr>
+            <td>毕业院校</td>
+            <td class="font1">河北经贸</td>
+            <td>专业</td>
+            <td class="font1">计算机</td>
+            <td>学历</td>
+            <td class="font1">本科</td>
+
+        </tr>
+        <tr>
+            <td>联系电话</td>
+            <td colspan="2" class="font1">17736127915</td>
+
+            <td>电子邮箱</td>
+            <td colspan="2" class="font1">2827451449@qq.com</td>
+
+        </tr>
+        <tr>
+            <td>现居住地</td>
+            <td colspan="6" class="font1">天津市东丽区西八道致馨公寓</td>
+        </tr>
+        <tr class="td1">
+            <td>求职意向</td>
+            <td colspan="6" class="font1"> 我希望寻求一个能够发挥我专业技能和丰富经验的职位
+                。我希望能在一个富有挑战和成长机会的公司工作，
+                并能够通过自己的努力为团队和公司带来显著的贡献。我的目标是加入一个具有创新精神的团队，
+                推动项目的成功，并在这个过程中不断提升自己的能力。</td>
+        </tr>
+        <tr class="td1">
+            <td>技能</td>
+            <td colspan="6" class="font1">编程技能：熟练掌握 Java、Python 和 JavaScript 等编程语言，有丰富的编程和开发经验。
+                数据库管理：熟悉 SQL、MySQL、MongoDB 等数据库系统，能够进行高效的数据管理和操作。
+                前端开发：精通 HTML5、CSS3、JavaScript，并有实际的前端开发项目经验。
+                项目管理：具备良好的项目管理技能，能够有效规划和执行项目，确保按时完成目标。
+
+            </td>
+        </tr>
+        <tr class="td1">
+            <td>个人特长</td>
+            <td colspan="6" class="font1">快速学习和适应能力：能够迅速学习新技能和技术，并能够快速适应新的工作环境和挑战。
+                问题解决能力：在面对复杂问题时，能够分析问题的根源，提出有效的解决方案，并实施解决方案。
+                团队合作：具备良好的团队合作精神，能够与团队成员有效沟通，共同完成项目目标。</td>
+        </tr>
+        <tr class="td1">
+            <td>自我综合描述</td>
+            <td colspan="6" class="font1">我的工作风格注重细节，具有高度的责任感和专业精神。
+                我致力于在工作中持续学习和成长，并能够在压力下保持冷静，准确高效地完成任务。
+                我的目标是为公司带来创新的解决方案，并通过我的努力推动公司业务的发展。
+                期待在一个充满活力和挑战的工作环境中，发挥我的专长，实现职业发展和个人成长。</td>
+        </tr>
+
+
+    </table>
+
+
+
+</body>
+
+</html>
