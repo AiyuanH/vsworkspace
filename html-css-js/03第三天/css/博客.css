@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+/*
+首先要把页面的所有标签的默认样式清除掉
+
+分别是
+通配符选择器将页面边框还有内边距清除掉
+链接得默认样式清除掉
+列表的默认样式清除掉
+*/
+
+* {
+
+    padding: 0;
+    margin: 0;
+    ;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+dl {
+    list-style: none;
+}
+
+
+/*
+页面的版心
+设置宽度为1200px
+并且设置居中
+*/
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* 页面背景颜色设置#f1f1f1*/
+body {
+    background-color: #f1f1f1;
+}
+
+
+/*
+    设置顶部得长条框高度为32px
+    设置背景颜色为#444444
+*/
+.top {
+    height: 32px;
+    background-color: #444444;
+    line-height: 32px;
+}
+
+/*
+    设置顶部左漂浮的文字
+    颜色和字号
+*/
+.top .top-logo {
+    float: left;
+    color: #ccc;
+    font-size: 12px;
+
+
+}
+
+/* 
+    设置顶部得右漂浮颜色和字号
+*/
+.top .top-links {
+    float: right;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.top .top-links a {
+    color: #ccc;
+}
+
+.top .top-links a:last-child {
+    margin-left: 30px;
+}
+
+.top .top-links a:hover {
+    color: #ffffff;
+}
+
+
+
+/*页面导航*/
+.menu {
+    height: 75px;
+    background-color: #fff;
+    line-height: 75px;
+
+}
+
+.menu .menu-logo {
+    float: left;
+
+}
+
+.menu .menu-nav {
+    float: right;
+
+}
+
+.menu .menu-nav a {
+    margin: 0 20px;
+    color: #666666;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu .menu-nav a:hover {
+    color: #00a6e9;
+}
+
+.banner {
+    margin-bottom: 20px;
+    height: 185px;
+    background-color: #c83d3d;
+    background-image: url(../imgs/banner.jpg);
+}
+
+
+.main {
+    height: 800px;
+    background-color: aquamarine;
+}
+
+.main .main-left {
+    width: 1064px;
+    height: 248px;
+    float: left;
+}
+
+.main .main-left .main-left-img {
+    margin: 20px;
+    width: 258px;
+    height: 208px;
+
+
+
+
+}
+
+.main .main-right {
+    float: right;
+    width: 735px;
+}
+
+.main .main-right a {
+    color: #666666;
+    font-size: 25px;
+    text-align: left;
+}
+
+.foot {
+    height: 100px;
+    background-color: #ffffff;
+    text-align: center;
+
+}
+
+.foot .foot-info {
+
+    color: rgb(112, 58, 58);
+    font-size: 12px;
+
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 基础选择器：
+                *{}   通用选择器
+                div{} 标签名选择器
+                #box{} id选择器
+                .box{} class选择器
+            关系选择器（后代选择器）：
+                选择器  选择器{  }
+        */
+        /* 选中class名称为box的盒子中的a标签 
+        .box a{
+            color: #f00;
+        }
+        */
+        /* 只能选中子标签（亲儿子） */
+        .box > a {
+            color: #f00;
+        }
+        /* 选择 class为box后面的第一个兄弟 */
+        .box + span{
+            color: #fa0;
+        }
+        .box ~ span{
+            color: #0a0;
+        }
+        /* 多个选择器选中不同的标签，需要使用相同的样式 */
+        div,p,h1{ color:deeppink; }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span>演示后代选择器</span>
+        <span>演示后代选择器</span>
+        <a href="#">baidu</a>
+        <ul>
+            <li>Java</li>
+            <li><a href="#">HTML</a></li>
+        </ul>
+    </div>
+    <span>兄弟选择器1</span>
+    <span>兄弟选择器2</span>
+    <span>兄弟选择器3</span>
+    <a href="#">京东</a>
+</body>
+
+</html>

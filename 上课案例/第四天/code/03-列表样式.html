@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            /* 列表默认样式取消 */
+            list-style: none;
+            list-style-image: url(./imgs/1.png);
+        }
+        li{
+            /* 设置鼠标样式 */
+            cursor: pointer;
+        }
+        div{
+            margin-top: 10px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #a00;
+            /* 圆角 */
+            border-radius: 100px;
+        }
+        .box2{
+            width: 200px;
+            height: 100px;
+            background-color: #0a0;
+            border-radius: 100px 100px 0 0 ;
+        }
+        .box3{
+            width: 200px;
+            height: 100px;
+            background-color: #fa0;
+            border-radius: 10%;
+        }
+        .box4{
+            width: 200px;
+            height: 100px;
+            background-color: #0af;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Java</li>
+        <li>HTML</li>
+        <li>CSS</li>
+    </ul>
+    <div class="box"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选择拥有abc属性的标签 */
+        [abc]{
+            color: #f00;
+        }
+        [abc='neuedu']{
+            font-weight: bold;
+        }
+        /* 伪对象 */
+        .demo::after{
+            content: "123";
+            color: #0af;
+            font-weight: bold;
+            font-size: 30px;
+            display: block;
+        }
+        .demo::before{
+            content: "ABC";
+        }
+        p::selection{
+            background-color: deeppink;
+            color: #0af;
+        }
+        input::placeholder{
+            color: #0af;
+        }
+        p::first-letter{
+            font-size: 32px;
+        }
+        p::first-line{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div abc="neuedu">12321321321</div>
+    <div>12321321321</div>
+    <p abc="neusoft">12321321321</p>
+
+    <span class="demo">演示伪对象选择器</span>
+    <p>演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器演示伪对象选择器</p>
+    <input type="text" placeholder="请输入用户名">
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            类选择器：要求标签必须拥有class属性，然后通过属性值选中标签
+
+            伪类选择器：它不是页面上真正存在一个class属性，而是类似于class选择器
+                通常表示的是标签的某种状态
+            
+            选择器:伪类名{   }
+
+            :link       未点击状态
+            :visited    点击后的状态
+            :hover      鼠标悬停在上面时的状态
+            :active     点击时的状态
+            上述的四个状态，书写顺序问题：L V H A
+        */
+        a:link {
+            color: #f00;
+
+        }
+
+        a:visited {
+            color: #0a0;
+        }
+
+        a:hover {
+            color: goldenrod;
+            font-size: 20px;
+        }
+
+        a:active {
+            color: #0af;
+            font-size: 20px;
+        }
+
+        .box span:first-child {
+            color: #f0f;
+            font-weight: bold;
+        }
+
+        table{
+            /* 表格边框收缩 */
+            border-collapse: collapse;
+        }
+        td{
+            padding: 10px 30px;
+            border: 1px solid #0af;
+        }
+        table tr:nth-child(2n){
+            background-color: rgb(210, 240, 210);
+        }
+        table tr:nth-child(2n-1){
+            background-color: rgb(145, 209, 241);
+        }
+        table tr:hover{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.jd.com">jd</a>
+    <a href="https://www.taobao.com">taobao</a>
+    <a href="https://www.baidu.com">baidu</a>
+    <a href="https://www.douyin.com">douyin</a>
+
+    <br><br><br>
+    <div class="box">
+        <span>演示后代选择器111</span>
+        <a href="#">baidu</a>
+        <span>演示后代选择器222</span>
+        <ul>
+            <li>Java</li>
+            <li><a href="#">HTML</a></li>
+        </ul>
+    </div>
+    <span>兄弟选择器1</span>
+    <span>兄弟选择器2</span>
+    <span>兄弟选择器3</span>
+    <a href="#">京东</a>
+    <table>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>地址</td>
+            <td>电话</td>
+        </tr>
+        <tr>
+            <td>张三1</td>
+            <td>20</td>
+            <td>北京</td>
+            <td>10086</td>
+        </tr>
+        <tr>
+            <td>张三2</td>
+            <td>20</td>
+            <td>北京</td>
+            <td>10086</td>
+        </tr>
+        <tr>
+            <td>张三3</td>
+            <td>20</td>
+            <td>北京</td>
+            <td>10086</td>
+        </tr>
+        <tr>
+            <td>张三4</td>
+            <td>20</td>
+            <td>北京</td>
+            <td>10086</td>
+        </tr>
+        
+    </table>
+</body>
+
+</html>

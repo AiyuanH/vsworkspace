@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 150px;
+            background-color: #fa0;
+            
+        }
+        .box1{
+             float:left;
+        }
+        .box2{
+            background-color: #0af;
+            /* 浮动操作 */
+            float:right;
+        }
+        .box3{
+            width: 240px;
+            height: 180px;
+            background-color: #faf;
+            /*
+                清除浮动
+                 both:两侧都不允许出现浮动的标签
+                 left：左侧不允许出现浮动的标签
+                 right：右侧不允许出现浮动的标签
+            */
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">box1box1box1</div>
+    <div class="box2">box2box2box2</div>
+    <div class="box3">box3box3box3</div>
+</body>
+</html>

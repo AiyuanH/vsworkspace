@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            如果单个选择器，直接根据优先级判断css样式具体哪一个有效。
+            如果层级关系选择器，需要根据不同的选择器的权重去计算最终哪组选择器生效
+            权重计算：
+                行内样式：权值1000
+
+                id选择器：权值100
+
+                class选择器：权值10
+
+                标签名：权值1
+        */
+        .box #demo2{
+            color: #fa0;
+        }
+        #demo .box2{
+            color: #0af;
+        }
+        #demo #demo2{
+            color:#f00;
+        }
+        .box .box2{
+            color:#f0f;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="demo">
+        <div class="box2" id="demo2">将这些权值使用到对应的层级样式中，权值加起来越大的数字，优先级越高。</div>
+    </div>
+</body>
+</html>
