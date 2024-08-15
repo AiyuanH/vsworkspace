@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 200px;
+            background-color: #ccc;
+            border-radius: 10px;
+            
+            /* 通过定位，将一个盒子放到屏幕的正中间 */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* 在定位之后，然后设置外边距 */
+            margin-top: -100px;
+            margin-left: -200px;
+        }   
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

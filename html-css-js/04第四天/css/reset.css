@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*这个是怪异模型都算在内*/
+}
+
+
+ul,ol,dl{
+    list-style: none;
+
+}
+
+a{
+    text-decoration: none;
+
+}
+img,textarea{
+    vertical-align: bottom;/*行内元素：当在行内元素中使用，
+    比如 <span> 或 <img>，它会使这些元素对齐到其行的底部。*/
+}
+
+input,button,textarea{
+    outline: none;
+/*隐藏轮廓*/
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}

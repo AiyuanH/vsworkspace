@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 100px;
+            background-color: #f00;
+            /* 
+                过渡动画transition
+                  第一个值：参与过渡动画的css属性名  ， all 所有属性都参数过渡动画
+                  第二个值：动画的时长
+                  第三个值：动画的曲线函数（贝塞尔曲线）
+                    linear： 线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0) 
+                    ease： 平滑过渡。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0) 
+                    ease-in： 由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0) 
+                    ease-out： 由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0) 
+                    ease-in-out： 由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0) 
+                    step-start： 等同于 steps(1, start) 
+                    step-end： 等同于 steps(1, end) 
+                  第四个值：动画延时多久开始执行
+
+                设置过渡动画必须满足是数字的变化  
+                过渡动画设置的原则：
+                 1、需要有原始值
+                 2、需要有目标值
+                 3、在需要参与动画的盒子添加transition属性
+            */
+            transition: all 2s ease-in 2s;
+        }
+        .box:hover{
+            width: 800px;
+            height: 400px;
+            background-color: #00f;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

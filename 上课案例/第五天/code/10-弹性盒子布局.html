@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 900px;
+            height: 500px;
+            background-color: #0af;
+            /* 设置弹性盒子 */
+            display: flex;
+            /* 设置主轴的方向 */
+            flex-direction: row;
+            /* 设置主轴上内容的排列方式 */
+            justify-content:space-evenly;
+            /* 设置主轴上的内容是否允许换行 */
+            flex-wrap: wrap;
+            /* 设置交叉轴上的排列方式 */
+            /* align-items:start;  */
+            align-content: center;
+        }
+        .box div{
+            width: 200px;
+            height: 100px;            
+        }
+        .item1{
+            background-color: #fa0;
+            
+        }
+        .item2{
+            background-color: #faf;
+          
+        }
+        .item3{
+            background-color: #aaf;
+            
+        }
+        .item4{
+            background-color: #aff;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 400px;
+            height: 400px;
+            background-color: #0af;
+            position: relative;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: #0a0;
+            /* 
+                在使用绝对定位的时候，当前标签会去找父标签，基于父标签的定位情况来决定自己的定位位置
+                如果父标签没有定位，那么基于body进行定位
+                如果父标签有定位，这时的子标签就会根据父标签的位置进行定位
+            */
+            position: absolute;
+            top:10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        子绝父相：
+    -->
+    <br><br><br><br>
+    <div class="box1">
+        <div class="box2"></div>    
+    </div>    
+</body>
+</html>

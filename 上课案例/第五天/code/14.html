@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>烟花效果</title>
+    <style>
+        .firework {
+            --firework-size: 5px;
+            width: var(--firework-size);
+            height: var(--firework-size);
+            background-color: #f0e68c;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes firework-explode {
+            0% {
+                opacity: 0;
+                width: var(--firework-size);
+                height: var(--firework-size);
+            }
+
+            50% {
+                opacity: 1;
+                width: 100px;
+                height: 100px;
+            }
+
+            100% {
+                opacity: 0;
+                width: 200px;
+                height: 200px;
+                animation: none;
+            }
+        }
+
+        @keyframes firework-fall {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -100%);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-50%, 100%);
+            }
+        }
+        .firework-explode {
+            animation: firework-explode 0.5s ease-in-out forwards;
+        }
+
+        .firework-fall {
+            animation: firework-fall 2s ease-in-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="firework"></div>
+
+    <script>
+        // JavaScript 用来触发烟花爆炸和落下的动画
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                document.querySelector('.firework').classList.add('firework-explode');
+            }, 1000); // 设定一定的延迟后添加爆炸动画
+
+            setTimeout(function () {
+                document.querySelector('.firework').classList.add('firework-fall');
+            }, 1500); // 再次设定延迟，添加落下的动画
+        });
+    </script>
+</body>
+
+</html>

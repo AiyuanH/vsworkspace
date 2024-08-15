@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 150px;
+        }
+        .box1{
+            background-color: #fa0;
+        }
+        .box2{
+            background-color: #0a0;
+            /* 定位 
+                static:默认值
+                absolute：绝对定位
+                relative：相对定位，当前标签针对自己原有位置进行定位，而且原位置不会让出
+                使用了定位之后，可以使用left、right、top、bottom属性将标签定位到页面的任何位置
+            */
+            position:relative;
+            bottom: 20px;
+            right: 40px;
+        }
+        .box3{
+            width: 240px;
+            height: 190px;
+            background-color: #0af;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+</body>
+</html>

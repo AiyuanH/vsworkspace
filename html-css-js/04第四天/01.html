@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Example</title>
+    <style>
+        .container {
+            overflow: auto; /* 清除浮动 */
+        }
+        
+        .box {
+            float: left;
+            width: 45%; /* 控制每个 div 的宽度，以确保它们在一行中 */
+            margin: 2.5%; /* 控制间距 */
+            background-color: lightblue;
+            padding: 20px;
+            box-sizing: border-box; /* 确保 padding 和 border 不会影响宽度 */
+        }
+        
+        .box:nth-child(2) {
+            background-color: lightgreen; /* 给第二个 div 一个不同的背景颜色，以便更好地看到效果 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+    </div>
+</body>
+</html>
