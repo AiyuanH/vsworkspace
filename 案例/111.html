@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- 函数介绍 -->
+ 
+<body>
+    <script>
+        console.log(parseInt('20.2aa'));
+//定义声明  这是函数的第一种方式
+        function add( a, b){
+            let sum = a+b;
+            return sum;
+
+        }
+
+
+        let b = add(1,2);
+        console.log(b);
+//函数表达式 第二种方式
+let c = function(a){
+    console.log("aaa",a);
+    
+}
+c(123);
+
+//使用ES6的箭头函数来简化函数书写 lambda 表达式
+let d = (a,b) => {
+    console.log(a+b);
+}
+d(123,456);
+        
+
+    </script>
+</body>
+
+</html>

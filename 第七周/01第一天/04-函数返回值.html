@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function a() {
+
+            return 1, 2, 3, 4;
+        }
+
+        console.log(a());
+        /*现在返回值是4！！
+        
+        return返回只有最后一个
+        如果想反回多个需要封装数组或对象
+        如果函数中return后面没有值，那么返回undefined
+        */
+
+        function b() {
+            return 1;
+            return 2;
+            return 3;
+            return 4;
+        }
+        //可以出现多个return
+
+
+        function c() {
+
+            return;
+        }
+        function d() {
+
+            return;
+        }
+        console.log(c());
+        console.log(d());
+        //这俩都返回 undefined
+
+
+        //这个有问题就是直接return的时候？？？？?
+
+
+    </script>
+
+</body>
+
+</html>

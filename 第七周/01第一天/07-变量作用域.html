@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //变量作用域   局部
+        /*
+            java代码if(x>0)int y = 0;会报错吗
+                ChatGPT 说：
+                ChatGPT  ：是的，这段 Java 代码会报错。具体来说，错误是因为在 Java 中，
+                局部变量的声明和初始化必须在语句块内完成，而不能直接出现在 if 语句后面而不使用花括号 {}。
+        */
+        //全局变量var
+        //局部变量let
+        var a = 10;
+
+        for ( a = 0; a < 10; a++) {
+             a = 20;
+            console.log(a);
+        }
+        console.log(a);
+
+
+    </script>
+</body>
+
+</html>
+

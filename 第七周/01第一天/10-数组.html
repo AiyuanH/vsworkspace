@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数组定义方式   可变长数组
+        //第一种
+        let a = [1,2,3,4,5,6,7,8,9,10];
+        console.log(a);
+        a[90] = 666;
+        console.log(a[60]);
+        console.log(a[90]);
+        //第二种
+        let b = new Array(1,2,3,4,5,6,7,8,9,10);
+        console.log(b);
+        //第三种
+        let c = new Array(10);
+        c[0] = 1;
+        c[1] = 2;
+        // 定义的数组存储的类型可以不同而且可以跳着给下标赋值
+        //如果数组定义长度为带小数的值则会报错
+        //"10.5"这个是长度的话数组只有这1个值长度为1
+
+        let d = new Array(10.5);//这一行报错
+        d[0] = 1;
+        console.log(d);
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

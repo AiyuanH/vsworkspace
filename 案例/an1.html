@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 1266px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        .main{
+            
+            width: 1266px;
+            height: 285px;
+            display: flex;/*弹性盒子！！*/
+            justify-content: space-between;/*是小盒子间隔均匀*/
+
+        
+        }
+    
+        .main .main-right{
+
+            width: 269px;
+            height: 285px;
+            background-color: rgb(148, 108, 108);
+          
+            
+        }
+    </style>
+
+</head>
+<body>
+    <!-- 大盒子：长1226px，宽285px
+
+    小盒子：长269px，宽285px，间距14px
+     -->
+    <div class="main container">
+        <div class="main-right"></div>
+        <div class="main-right"></div>
+        <div class="main-right"></div>
+        <div class="main-right"></div>
+    </div>
+</body>
+</html>

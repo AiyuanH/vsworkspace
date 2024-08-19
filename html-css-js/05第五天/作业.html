@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- (二) 编程题
+
+1.打印所有的水仙花数
+
+
+
+
+2.实现斐波那契数列的前20项的打印，1 1 2 3 5 8 ........
+
+3.根据学生的分数，对应输出该分数所对应的考试等级:A/B/C/D -->
+
+
+    <script>
+        // 水仙花数
+
+
+        for (let i = parseInt(100); i <= 999; i++) {
+            let a = parseInt(i % 10);
+            let b = parseInt(i / 10 % 10);
+            let c = parseInt(i / 100);
+
+            if (a * a * a + b * b * b + c * c * c == i) {
+                console.log(i);
+            }
+        }
+       
+    </script>
+    <script>
+        // 2.实现斐波那契数列的前20项的打印，1 1 2 3 5 8 ........
+
+        let a = parseInt(1);
+        let b = parseInt(1);
+        console.log(a);
+        console.log(b);
+        let x= parseInt(0);
+        for(let i = parseInt(2);i<20;i++){
+            x = a+b;
+            a = b;
+            b = x;
+            console.log(x);
+            
+            
+            
+            
+        }
+
+    </script>
+    <script>
+        //3.根据学生的分数，对应输出该分数所对应的考试等级:A/B/C/D
+
+
+
+        let score = parseInt(prompt("请输入分数"));
+        if (score >= 90) {
+            console.log("A");
+        } else if (score >= 80) {
+            console.log("B");
+        } else if (score >= 70) {
+            console.log("C");
+        } else if (score >= 60) {
+            console.log("D");
+        } else {
+            console.log("E");
+        }
+    </script>
+
+</body>
+
+</html>

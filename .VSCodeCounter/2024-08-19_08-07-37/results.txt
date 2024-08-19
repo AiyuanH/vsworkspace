@@ -1,0 +1,73 @@
+Date : 2024-08-19 08:07:37
+Directory : d:\vsworkspace\html-css-js
+Total : 32 files,  2134 codes, 154 comments, 439 blanks, all 2727 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| HTML       |         22 |      1,357 |         99 |        244 |      1,700 |
+| CSS        |          8 |        760 |         55 |        194 |      1,009 |
+| JSON       |          1 |         16 |          0 |          1 |         17 |
+| JavaScript |          1 |          1 |          0 |          0 |          1 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                        | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                           |         32 |      2,134 |        154 |        439 |      2,727 |
+| 03第三天                                                       |          2 |        340 |         27 |        139 |        506 |
+| 03第三天 (Files)                                               |          1 |        205 |          1 |         62 |        268 |
+| 03第三天\css                                                   |          1 |        135 |         26 |         77 |        238 |
+| 04第四天                                                       |         11 |        907 |         33 |        155 |      1,095 |
+| 04第四天 (Files)                                               |          3 |         98 |          3 |         20 |        121 |
+| 04第四天\css                                                   |          3 |        150 |          9 |         25 |        184 |
+| 04第四天\fonts                                                 |          5 |        659 |         21 |        110 |        790 |
+| 05第五天                                                       |          2 |         66 |         10 |         21 |         97 |
+| 四级项目                                                        |          3 |        260 |          0 |         33 |        293 |
+| 第一天                                                         |          9 |        389 |         82 |         77 |        548 |
+| 第一天\html                                                    |          9 |        389 |         82 |         77 |        548 |
+| 第二天                                                         |          5 |        172 |          2 |         14 |        188 |
+| 第二天\css                                                     |          1 |         15 |          1 |          1 |         17 |
+| 第二天\html                                                    |          4 |        157 |          1 |         13 |        171 |
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                    | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\vsworkspace\html-css-js\03第三天\css\博客.css                 | CSS        |        135 |         26 |         77 |        238 |
+| d:\vsworkspace\html-css-js\03第三天\博客.html                    | HTML       |        205 |          1 |         62 |        268 |
+| d:\vsworkspace\html-css-js\04第四天\01.html                    | HTML       |         30 |          0 |          3 |         33 |
+| d:\vsworkspace\html-css-js\04第四天\css\mi.css                 | CSS        |         65 |          7 |          8 |         80 |
+| d:\vsworkspace\html-css-js\04第四天\css\reset.css              | CSS        |         21 |          2 |          6 |         29 |
+| d:\vsworkspace\html-css-js\04第四天\css\太极.css                 | CSS        |         64 |          0 |         11 |         75 |
+| d:\vsworkspace\html-css-js\04第四天\fonts\demo.css             | CSS        |        435 |         19 |         86 |        540 |
+| d:\vsworkspace\html-css-js\04第四天\fonts\demo_index.html      | HTML       |        191 |          2 |         19 |        212 |
+| d:\vsworkspace\html-css-js\04第四天\fonts\iconfont.css         | CSS        |         16 |          0 |          4 |         20 |
+| d:\vsworkspace\html-css-js\04第四天\fonts\iconfont.js          | JavaScript |          1 |          0 |          0 |          1 |
+| d:\vsworkspace\html-css-js\04第四天\fonts\iconfont.json        | JSON       |         16 |          0 |          1 |         17 |
+| d:\vsworkspace\html-css-js\04第四天\mi.html                    | HTML       |         49 |          3 |         16 |         68 |
+| d:\vsworkspace\html-css-js\04第四天\太极.html                    | HTML       |         19 |          0 |          1 |         20 |
+| d:\vsworkspace\html-css-js\05第五天\01.html                    | HTML       |         16 |          0 |          2 |         18 |
+| d:\vsworkspace\html-css-js\05第五天\作业.html                    | HTML       |         50 |         10 |         19 |         79 |
+| d:\vsworkspace\html-css-js\四级项目\01.html                     | HTML       |         57 |          0 |          5 |         62 |
+| d:\vsworkspace\html-css-js\四级项目\02.html                     | HTML       |        126 |          0 |         18 |        144 |
+| d:\vsworkspace\html-css-js\四级项目\03.html                     | HTML       |         77 |          0 |         10 |         87 |
+| d:\vsworkspace\html-css-js\第一天\html\01-demo.html            | HTML       |         48 |          7 |          7 |         62 |
+| d:\vsworkspace\html-css-js\第一天\html\01-自定义列表.html           | HTML       |         18 |          0 |          6 |         24 |
+| d:\vsworkspace\html-css-js\第一天\html\03.css                  | CSS        |          9 |          0 |          1 |         10 |
+| d:\vsworkspace\html-css-js\第一天\html\06-完整的表格.html           | HTML       |         21 |         16 |          4 |         41 |
+| d:\vsworkspace\html-css-js\第一天\html\10-表单标签.html            | HTML       |         54 |          2 |         10 |         66 |
+| d:\vsworkspace\html-css-js\第一天\html\11-input标签的type属性值.html | HTML       |         34 |         22 |          7 |         63 |
+| d:\vsworkspace\html-css-js\第一天\html\12-表单其他属性值 .html        | HTML       |         44 |         30 |         10 |         84 |
+| d:\vsworkspace\html-css-js\第一天\html\简历01.html               | HTML       |         52 |          5 |         12 |         69 |
+| d:\vsworkspace\html-css-js\第一天\html\简历02.html               | HTML       |        109 |          0 |         20 |        129 |
+| d:\vsworkspace\html-css-js\第二天\css\02-通用选择器.css             | CSS        |         15 |          1 |          1 |         17 |
+| d:\vsworkspace\html-css-js\第二天\html\02-通用选择器.html           | HTML       |         29 |          0 |          0 |         29 |
+| d:\vsworkspace\html-css-js\第二天\html\03-字体样式.html            | HTML       |         58 |          0 |          9 |         67 |
+| d:\vsworkspace\html-css-js\第二天\html\04-文本样式.html            | HTML       |         44 |          0 |          2 |         46 |
+| d:\vsworkspace\html-css-js\第二天\html\10-盒子模型.html            | HTML       |         26 |          1 |          2 |         29 |
+| Total                                                       |            |      2,134 |        154 |        439 |      2,727 |
++-------------------------------------------------------------+------------+------------+------------+------------+------------+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5,6,7,8,9,10];
+
+        // 数组的拼接
+        let newArr = arr.concat(11,12,13,14,15,16,17,18,19,20);
+
+        console.log(newArr);
+        console.log(arr);
+
+
+        arr.indexOf(1);//前面下标
+        arr.lastIndexOf(1);//末尾下表
+        arr.join("--");//分割数组
+        arr.slice(1,5);//截取数组
+       
+        // --------------------------
+        arr.push("aaa")//数组末尾追加数据
+        arr.pop();//
+        arr.shift();//
+        arr.unshift();//
+        arr.splice(1,5);//牛逼增删改查  从第一个开始扇五个!!!
+        arr.splice(1,5,"aaa")//扇五个后添加aaa
+        arr.reverse();//反转数组
+        arr.sort();//排序数组
+        arr.sort(function(a,b){return a-b});//排序数组？？？
+        arr.sort(function(a,b){return b-a});//排序数组？？？
+        arr.sort(function(a,b){return a.length-b.length});//排序数组？？？
+        arr.sort(function(a,b){return b.length-a.length});//排序数组？？？
+        arr.map(function(item,index,arr){ // map方法数组
+            console.log(item);
+            console.log(index);
+            console.log(arr);
+        })
+
+        //过滤数组
+        arr.filter(function(item,index,arr){
+            console.log(item);
+            console.log(index);
+            console.log(arr);
+        })
+
+        //维数
+
+
+
+
+    </script>
+</body>
+</html>

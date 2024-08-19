@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(a,b){
+            let sum = a+b;
+            return sum;
+        }
+
+        let a = add;
+        console.log(a);
+/* 
+        ƒ add(a,b){
+            let sum = a+b;
+            return sum;
+
+
+            调用语句必须用 参数名（实参）小括号一定要加！！！！！！！！！！！！！！！！！！！！！！！！
+            let a = add;
+            如果没有加小括号不是在调用函数
+            是将当前函数赋值给其他变量
+            变量也会转为函数名
+
+        } */
+
+        
+    </script>
+</body>
+</html>

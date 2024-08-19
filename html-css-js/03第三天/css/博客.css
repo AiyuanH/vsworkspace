@@ -35,7 +35,7 @@ dl {
 .container {
     width: 1200px;
     margin: 0 auto;
-  
+
 }
 
 
@@ -95,7 +95,7 @@ body {
     height: 75px;
     background-color: #fff;
     line-height: 75px;
-  
+
 
 }
 
@@ -129,14 +129,15 @@ body {
 
 
 .main {
-    height: 800px;
-    
+  width: 993px;
+    display: flex;
     background-color: aquamarine;
-   
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
 .main .main-left {
-    
+
     height: 248px;
     float: left;
 }
@@ -147,52 +148,80 @@ body {
     height: 208px;
 }
 
+
+
+
+
 .main .main-right {
-    float: left;
-    margin: 20px;
-    width: 735px;
-    margin-top: 50px;
-
-
-}
-.sprite{
-    width: 10px;
-    height: 20px;
-    background-image:url(../imgs/icon.png) ;
-    background-size: 100px 100px; /* 精灵图的总宽度和高度 */
-    display: li;
-}
-
-.sprite .icon-1{
-    background-position: 0px 0px;
-}
-.sprite .icon-2{
-    background-position: 15px 0px;
-}
-.sprite .icon-3{
-    background-position: 0px 35px;
-}
-.sprite .icon-4{
-    background-position: 0px 55px;
-}
+    display: flex;
+    flex-direction: column;
+    float: right;
+  
+    width: 680px;
+    height: 208px;
+    margin-top: 20px;
    
+}
 
 
-.main .main-right a {
-   margin-top: 40px;
+
+
+
+
+.main .main-right a{
+
+   
     color: #666666;
     font-size: 25px;
     text-align: left;
+    margin-bottom: 20px;
+
 }
 
+.main .main-right .main-right-img {
+    background-repeat: no-repeat;
+    display: flex;
+    margin-top: 20px;
+margin-bottom: 20px;
     
-  
-
-.main .main-right span{
-   margin-right: 30px;
-   line-height: 30px;
    
 }
+
+.main .main-right .main-right-img div{
+  
+    width: 20px;
+    height: 20px;
+    align-items: center; /* 垂直居中对齐 */
+    gap: 10px; /* 元素之间的间距 */
+    background-image: url(../imgs/icon.png);
+   
+}
+
+
+.main .main-right .main-right-img .icno-1{
+    background-position: 2px 3px;
+
+}
+
+.main .main-right .main-right-img .icno-2{
+    background-position: 2px -13px;
+
+}
+
+.main .main-right .main-right-img .icno-3{
+    background-position: 2px -46px;
+
+}
+
+.main .main-right .main-right-img .icno-4{
+    background-position: 2px -29px;
+}
+
+
+
+
+
+
 
 .foot {
     height: 100px;

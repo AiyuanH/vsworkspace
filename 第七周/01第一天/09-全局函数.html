@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            String (数据) 转为 字符串
+            Number (数据) 转为 数字
+            Boolean (数据) 转为 布尔值
+            parseInt (字符串) 转为 数字
+            parseFloat (字符串) 转为 数字
+            toString (数据) 转为 字符串
+            valueOf (数据) 转为 数据
+            toString (数据) 转为 字符串
+            toLocaleString (数据) 转为 字符串
+            toFixed (数据) 转为 字符串
+            toExponential (数据) 转为 字符串
+            toPrecision (数据) 转为 字符串
+            isNaN (数据) 判断是否为 NaN 可以检测字符串是否为数字不是数字返回true如果是数字则返回 false
+            isFinite (数据) 判断是否为有限数
+
+
+        */
+
+        // 将字符串转为js代码
+        var str555 = 'var a = 1;'
+        eval(str555)
+
+
+        //编码和解码
+
+        //编码表（Code Table）:
+
+            //定义: 编码表是字符与其对应的数字编码之间的映射表。它定义了如何将字符、
+            //符号、或指令转换为计算机可以处理的二进制数据。
+
+        //编码（Encoding）:
+
+            //定义: 编码是指根据编码表将数据转换为一种标准格式的过程。
+            //这种格式通常是由字节序列组成，用于表示字符或其他数据类型。
+
+
+
+        let str = "https://www.baidu.com?username=张三&age = 18";
+        console.log("本来");
+        
+        console.log(str);
+
+        //编码
+        let newStr = encodeURI(str);
+        console.log("编码");
+        
+        console.log(newStr);
+
+        //解码
+        let newStr2 = decodeURI("https://www.baidu.com?username=%E5%AC%A0%E4%B8%89&age%20=%2018");
+        console.log("解码");
+        console.log(newStr2);
+        
+    </script>
+</body>
+</html>

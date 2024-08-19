@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数递归调用
+      /*   function add(a,b){
+            if(b==0){
+                return a;
+            }else{
+                return add(a+1,b-1);
+            }
+        }  你这个机器给我的哦
+          */
+
+          //递归分为两种
+          //间接递归：a函数调用b函数b函数调用c函数   ，，，c调用a函数！！！！
+          //直接递归：自己调用自己
+        //   function a(b = 5){
+        //     let c = b--;
+        //     a(b);
+        //     let sum = b*c;
+        //     return sum;
+
+        //   }
+        //   console.log(a(5));
+
+
+          //5的阶乘用递归
+          function a(b = (-5)){
+            if(b==1){
+                return 1;
+            }else{
+                return b*a(b-1);
+            }
+          }
+          console.log(a(5));
+          /*这里还涉及到了在网页中设置断点调试的功能浏览器中的那个源代码板块英文是sources */
+          //老师的
+          function fn(n){
+            if(n>1){
+                return n*fn(n-1);
+
+            }
+            return n;
+          }
+          console.log(fn(-5));
+          console.log(fn(5));
+          //这个递归流程会疯狂压栈？？
+          
+
+    </script>
+</body>
+</html>

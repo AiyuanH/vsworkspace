@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(a,b){
+            if(!a){
+                a = 0;
+                // 给个初始值怕结果为nan
+            }
+
+            a = a || 0;//这个是代替逻辑运算符的
+            // a = a ? a : 0;怕运算错误
+
+            let sum = a+b;
+            return sum;
+        }
+
+        //ES6中给的参数的默认值新的写法
+        function add2(a = 0,b = 0){
+        let sum = a+b;
+            return sum;
+        }
+
+        let a = add(12,12555,5,5,5,5);
+        let b = add(1);
+        console.log(a);
+/* 
+     参数不正确的时候
+     多的话不显示
+     少的话参数默认值
+
+
+     数字加上非数字为   NaN！！！
+
+        } */
+
+        
+    </script>
+</body>
+</html>

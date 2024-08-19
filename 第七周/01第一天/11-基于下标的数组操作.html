@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //数组下标
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        //arr[133] = 200;
+        //末尾的undefined在数组输出不输出 
+        //这个中间的undefined在数组输出
+        console.log(arr);
+
+
+        /*三种遍历数组的方式!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+        //遍历数组
+        console.log("第一种");
+
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+
+        }
+        //forin语句遍历数组
+        //语法for（let 变量名 in 数组名）{ forin中的变量名表示当前每次遍历数组的每个空间的下标}
+        console.log("第二种");
+        for (let x in arr) {
+            console.log(x, arr[x]);
+
+        }
+
+
+        //forEach遍历数组事数组中提供的一个函数
+        //forEach每遍历一个数组空间在底层会自动调用传递进去的这个函数？？？？？？？？？？？？
+        console.log("第三种");
+
+        console.log("--------".repeat(10));
+        
+        //value index arr
+        arr.forEach(function (item, index, arr) {
+            console.log(index, item);
+        })
+        // ?????
+        console.log("--------".repeat(10));
+        // 箭头函数省略forEach然后如果只有一个值小括号里可以省略小括号
+        arr.forEach((item, index, arr) => {
+            console.log(index, item);
+        })
+
+
+    </script>
+</body>
+
+</html>
