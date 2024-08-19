@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function demo(){
+            console.log("demo....");
+            return 123; 
+        }
+        // 调用函数的语句，必须是函数名(实参)
+        // let a = demo();
+        // 如果调用语句时，函数名的后面没有添加小括号这时，不是在调用函数
+        // 是将当前的函数赋值给其他的变量，这时的变量也会转成函数名
+        let a = demo;
+        console.log(a);
+        // 这里的a和demo都属于上面的函数名，都可以让函数去执行
+        a();
+        
+    </script>
+</body>
+</html>

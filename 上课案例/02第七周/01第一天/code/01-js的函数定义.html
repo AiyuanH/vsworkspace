@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Java中定义方法的格式：
+            修饰符 返回值类型  方法名(参数类型 参数1，参数类型 参数2 ...){}
+
+
+            JS中的函数：一段独立的代码，可以通过函数名去调用，让其执行。
+
+            
+            第一种方式：
+                function 函数名( 参数1 ， 参数2 .... ){ 函数体 }
+        
+        */ 
+        // 定义函数，计算两个数的和值
+        function getSum(a , b ){
+            let sum = a + b;
+            return sum;
+        }
+
+        let s = getSum(1,2,3,4,5,6);
+        console.log(s);
+
+        /*
+            第二种方式：函数表达式
+                const 变量名 = function ( 参数1 ， 参数2 .... ){ 函数体 }
+        
+        */ 
+        let demo = function(a){
+            console.log("demo a " , a);
+        }
+        demo(123);
+
+        /*
+            使用ES6种的箭头函数，简化函数的书写 lambda表达式
+            const 变量名 = ( 参数1 ， 参数2 .... ) => { 函数体 }
+        */
+       let func = (a,b)=>{
+        console.log(a,b);
+       }
+       func(123,456);
+
+    </script>
+</body>
+</html>

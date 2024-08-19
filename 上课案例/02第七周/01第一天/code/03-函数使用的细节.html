@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+            实参和形参个数不一致问题
+        */
+        function demo(a, b) {
+            console.log(a, b);
+        }
+        demo(1, 2, 3, 4, 5);
+        demo();
+
+        /*
+            形参的默认值
+        */
+        function add(a = 0, b = 0) {
+            /*
+            if(!a) a = 0;
+            if(!b) b = 0;
+            a = a || 0;
+            b = b || 0;
+            */
+            return a + b;
+        }
+        console.log( add(33,44) );
+        console.log( add(11) );
+        
+
+
+
+    </script>
+</body>
+
+</html>

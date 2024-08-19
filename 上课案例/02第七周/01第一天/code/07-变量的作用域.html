@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            变量作用域: 从变量定义的位置开始，到底可以在哪个范围中使用
+            全局变量：作用域全局范围
+            局部变量：定义在函数内部的变量，只能在函数内部使用
+        */ 
+       // 全局变量
+        var a = 10;
+        if( a > 5 ){
+            console.log(a);
+        }
+
+        function fn(){
+            // 局部变量
+            var b = 20;
+            console.log(a , b);
+        }
+        fn()
+        // a是全局变量，使用范围从第一位置开始
+        // b是局部变量，只能在b所在的局部内部使用
+        //console.log(a,b);
+        
+      
+    </script>
+</body>
+</html>

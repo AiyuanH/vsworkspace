@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            JS中的数组：
+            第一种定义方式： 
+                let 数组名 = [数据,数据,数据,数据,数据,数据];
+            第二种定义方式：    
+                // 定义数组，并明确数组中的数据
+                let 数组名 = new Array(数据,数据,数据,数据,数据,数据);
+                // 定义数组，指定数组的长度
+                let 数组名 = new Array(正整数值);
+            定义的数组，即使指定的长度或者给空间中存储了数据，这时可以通过下标给任意的空间去赋值
+            即使不存在的空间也可以赋值，这时数组会自动的扩容
+            数组的每个空间存储的数据，类型都可以不相同
+            如果数组的某个空间没有存储数据，直接去使用，默认undefined
+        */ 
+        let arr = [11,22,33,44,55,66];
+        console.log(arr);
+        arr[0] = 100;
+        console.log(arr);
+        arr[7] = "abc";
+        console.log(arr);
+        console.log(arr[0]);
+        console.log(arr[1]);
+        console.log(arr[6]);
+        
+        let arr2 = new Array(11,true,false,"abc",null,0);
+        console.log(arr2);
+
+        // 在new Array创建数组的时候，需要注意指定的值为number类型，并且只有一个，表示的数组的长度
+        // 如果是其他的数据，表示的是数组中的数据
+        let arr3 = new Array(10);
+        console.log(arr3);
+
+        let arr4 = new Array("10.5");
+        console.log(arr4);
+        
+        
+        
+    </script>
+</body>
+</html>

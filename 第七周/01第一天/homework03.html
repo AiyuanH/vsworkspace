@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //书写代码测试数组的常用方法
+        let arr1 = [1, 6, 3, 4, 2, 5, 7, 10, 8, 9];
+        //1数组拼接使用数组得方法concat
+        let  newArr1 = arr1.concat(11,22,33);
+        console.log(newArr1);
+        
+        //2数组查找使用数组得方法indexOf
+        let newArr2 = arr1.indexOf(1);
+        //这个输入的是数组中可能存在的数字然后输出是下标
+        console.log(newArr2);
+
+        //3数组查找从后往前查找使用数组得方法lastIndexOf
+        let newArr3 = arr1.lastIndexOf(1);
+        //这个输入的是数组中可能存在的数字然后输出是下标
+        console.log(newArr3);
+
+        //4数组转成字符串使用数组得方法toString
+        let newArr4 = arr1.toString();
+        console.log(newArr4);
+
+        //5数组转成字符串使用数组得方法join并添加中间
+        let newArr5 = arr1.join("*****");
+        console.log(newArr5);
+
+        //6数组截取使用数组中的方法slice
+        let newArr6 = arr1.slice(0,2);
+        //这个输入两个数第一个是数组的下表第二个是截取的个数
+        console.log(newArr6);
+
+
+        /*从这个往下就要对数组本身进行修改了*/
+        let arr2 = [1, 6, 3, 4, 2, 5, 7, 10, 8, 9];
+        //7给数字末尾追加数据
+        arr2.push(99);
+        //给末尾追加的元素在数组本身修改要输出数组本身
+        console.log(arr2);
+
+        //8给数字末尾删除数据
+        arr2.pop();
+        console.log(arr2);
+
+        //9数字头部删除数据
+        arr2.shift();
+        console.log(arr2);
+
+        //10数字头部添加数据
+        arr2.unshift(0);
+        console.log(arr2);
+
+        //splice这个是对于指定元素的删除
+        //11数组从指定位置删除指定个数数据
+        arr2.splice(1,2);
+        console.log(arr2);
+
+        //这个需传入起始位置，个数和新数据，可替换或者增加
+        //12数组从指定位置删除指定个数数据并添加新数据
+        arr2.splice(1,2,"aaa","bbb","ccc");
+        console.log(arr2);
+
+        console.log("========================================================");
+
+        
+        //13数组批量处理数据使用数组得方法map
+        //注意这个是简单的写法复杂的写法注意哦
+        let newArr7 = arr1.map(item =>{
+            return item*2;
+        });
+        console.log(newArr7);
+        
+        //14数组过滤数据使用数组得方法filter
+        let newArr8 = arr1.filter(item =>{
+            if(item%2==0){
+                return item;
+            }
+        })
+        console.log(newArr8);
+
+        //15多维数组转换成一维数组得方法使用数组得方法flat
+        let arr3 = [1,2,[3,4,5,[6,7,8,9,[10,11,12],13],14],15];
+        console.log(arr3);
+        //使用方法flat的时候要设置一个参数这个参数是1？？？
+        console.log(arr3.flat(Infinity));
+        
+
+
+
+        
+
+
+
+        
+        
+
+        
+        
+        
+        
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 使用new 关键字，得到JS中的一个对象
+        let obj = new Object();
+        console.log(obj);
+        
+        let obj2 = {};
+        console.log(obj2);
+
+        // 可以给任意一个对象中添加属性或者方法
+        obj2.name = "zhangsan";
+        obj2.age = 23;
+        obj2.address = "天津";
+        obj2.say = function(){
+            console.log("say");
+        }
+        obj2.fn = function(){
+            console.log("fn");
+        }
+        console.log(obj2);
+
+        let obj3 = {};
+        console.log(obj3);
+
+        // js中函数可以是对象
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+            this.key = 123;
+            this.say = function(){
+                console.log(this.name,this.age); 
+            }
+        }
+
+        // 这时上面的代码就是一个普通的函数
+        Person('lisi',20);
+        
+        // 这时上面的function Person()就是构造函数
+        let p = new Person('张无忌',20);
+        p.sex = '男'
+        console.log(p);
+
+        let p2 = new Person('赵敏',18);
+        console.log(p2);
+
+        // 遍历对象
+        for( let key in p ){
+            // 如果在获取对象中的某个属性对应的值的时候，
+            // 可以采用对象.属性名
+            // console.log(key,p.key);
+            // 但是如果属性名放在某个变量中，这时就不能对象.变量名，而需要使用对象[变量名]
+            console.log(key,p[key]);  
+        }    
+        
+        
+        
+
+    </script>
+</body>
+</html>

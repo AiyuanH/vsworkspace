@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         *  Random r = new Random();
+         *  t.nextInt(100) 0-100
+         * 
+         *  在JS中，没有Random这个对象，只能使用Math.random()方法
+         * */ 
+        console.log(Math.random());
+        /*
+            Math.random()           0     1
+            Math.random()*100       0     100
+
+            产生 m - n 之间的随机数
+            Math.floor(Math.random()*(n-m) + m)
+        */
+        console.log(Math.random()*100 + 100);
+        console.log(Math.floor(Math.random()*100 + 100));
+        
+    </script>
+</body>
+</html>

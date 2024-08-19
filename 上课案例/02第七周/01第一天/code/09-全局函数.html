@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+         * String(  数据  ) : 将指定的数据转成字符串 
+         * Number( 数据 ) ： 将数据转成数字类型
+         * Boolean( 数据 ) ： 将数据转成boolean值
+         * parseInt( 数据 )：
+         * parseFloat( 数据 )：
+         * isNaN(数据) :可以判断指定的数据是否为数字，不是数字返回true，否则返回false
+        */
+        console.log(isNaN('123'));
+
+        /*
+            eval("字符串") ： 将字符串转成js代码，并运行这个段js代码
+        */
+        let s = "while(true)alert(1)";
+        //eval(s);
+        //console.log(s);
+
+        /*
+            编码表：计算机的底层只能识别二进制，生活中的符号基本都不会使用二进制。
+                为了将生活中的符号能够存储在计算机中，必须将生活的符号转成二进制
+                于是形成不同的国家针对自己国家的文字符号制定一个规则
+                生活中符号   -----    数字   -----  二进制
+                
+            ASCII： 英文字母、数字、符号 ，0-127 之间一些数据
+            GBK：中文   2万多中文符号
+            GB2312：中文    6000+中文符号
+            UTF-8：全球通用编码表
+
+            编码和解码：
+                编码：将生活中的符号通过编码表转成二进制
+                解码：将二进制通过编码表转成生活中的符号
+        */
+        let str = "http://www.baidu.com?username=张三&age=20&address=北京";
+        // 编码
+        let newStr = encodeURI(str);
+        console.log(str);
+        console.log(newStr);
+        // 解码
+        let str2 = decodeURI(newStr);
+        // let str2 = decodeURI("http://www.baidu.com?username=%E%BC%A0%E4%B8%89&age=20&address=%E5%8C%97%E4%BA%AC");
+        console.log(str2);
+        
+
+    </script>
+</body>
+
+</html>

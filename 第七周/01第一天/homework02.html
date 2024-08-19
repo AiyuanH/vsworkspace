@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //什么是编码和解码，并使用代码测试代码和解码
+        /* 编码是对人类知道的语言进行转换成机器所能识别的码
+        解码是机器识别的码转化成人类所知道的语言 */
+        var str = "hello world";
+        var str1 = encodeURI(str);
+        //这个是编码得encodeURL
+        var str2 = decodeURI(str1);
+        //这个是解码得decodeURL
+        console.log(str1);
+        console.log(str2);
+
+    </script>
+</body>
+
+</html>
