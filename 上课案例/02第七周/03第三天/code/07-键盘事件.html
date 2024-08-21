@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 200px;
+            height: 200px;
+            background-color: #0af;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" ></div>
+    <input type="text">
+    <textarea></textarea>
+    <script>
+        let box = document.querySelector('.box');
+        // 按键盘的上下左右键的时候，让div在屏幕上移动
+        // 当给事件源绑定事件之后，一般都需要编写事件的处理函数
+        // 只要事件发生之后，浏览器会自动调用给事件绑定的哪个处理函数
+        // 同时将发生的事件（动作）封装成一个对象，传递给事件处理函数
+        window.addEventListener('keydown',function(e){            
+            console.log(e.keyCode , e.code);
+            if(e.keyCode == 37){
+                // 向左
+                box.style.left = box.offsetLeft - 50 + 'px';
+            }else if(e.keyCode == 38){
+                box.style.top = box.offsetTop - 50 + 'px';
+            } else if (e.keyCode == 39) {
+                box.style.left = box.offsetLeft + 50 + 'px';
+            } else if (e.keyCode == 40) {
+                box.style.top = box.offsetTop + 50 + 'px';
+            }
+            
+        })
+    </script>
+</body>
+</html>

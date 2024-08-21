@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #fa0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <button class="btn">按钮点击</button>
+    <script>
+        // 获取到页面某个需要绑定事件的标签
+        let btn = document.querySelector(".btn");
+        btn.onclick = function () {
+            let box = document.querySelector('.box');
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            box.style.backgroundColor = `rgb(${r},${g},${b})`;
+        }
+        btn.onclick = function () {
+                let box = document.querySelector('.box');
+                let r = Math.floor(Math.random() * 256);
+                let g = Math.floor(Math.random() * 256);
+                let b = Math.floor(Math.random() * 256);
+                box.style.backgroundColor = `rgb(${r},${g},${b})`;
+            }
+    </script>
+</body>
+
+</html>

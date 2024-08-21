@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="start">开始</button>
+    <button id="_stop">停止</button>
+    <div id="result">姓名</div>
+
+    <script>
+        let arr = ["张三","李四", "王五", "赵六", "赵四", "张无忌", "赵敏", "赵本山"];
+
+        let timeID = null;
+        // 点击开始按钮
+        start.onclick = function(){
+            timeID = setInterval(function(){
+                let index = Math.floor(Math.random() * arr.length);
+                console.log(arr[index]);
+                result.innerHTML = arr[index];
+            },15);
+        }
+
+        // 点击停止按钮
+        _stop.onclick = function(){
+            result.innerHTML = "李浩阔";
+            clearInterval(timeID);
+        }
+    </script>
+</body>
+</html>

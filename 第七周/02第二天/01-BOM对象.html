@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        console.log(window.name);
+        window.innerHeight;
+        window.innerWidth;
+        window.outerHeight;
+        window.outerWidth;
+        window.screen.height;
+        window.screen.width;
+        window.screen.availHeight;
+        window.screen.availWidth;
+        window.screen.colorDepth;
+        window.screen.pixelDepth;
+        window.screen.orientation;
+        window.screen.lockOrientation;
+        window.screen.unlockOrientation;
+        window.screen.lockOrientationUnsupported;
+        window.screen.orientation.angle;
+        window.screen.orientation.type;
+        window.screen.orientation.onchange;
+        window.screen.orientation.lock("landscape-primary");
+        window.screen.orientation.unlock();
+        window.screen.orientation.onchange = function () {
+            console.log(window.screen.orientation.type);
+        }
+        window.alert("hello world");//警告框
+        window.confirm("hello world");//确认框
+        window.prompt("hello world");//输入框
+        window.open("https://www.baidu.com");//打开新窗口
+        window.close();//关闭窗口
+        window.print();//打印窗口
+        window.moveTo(100, 100);//移动窗口
+        window.moveBy(100, 100);//移动窗口
+        window.resizeTo(100, 100);//调整窗口大小
+        window.resizeBy(100, 100);//调整窗口大小
+        window.scrollTo(100, 100);//滚动窗口
+        //这个可以设置一个对象
+
+        window.scrollBy(100, 100);//滚动窗口
+        window.scroll(100, 100);//滚动窗口
+        window.location.href = "https://www.baidu.com";//跳转
+        window.location.replace("https://www.baidu.com");//替换
+        window.location.reload();//刷新
+        window.location.assign("https://www.baidu.com");//跳转
+    
+        window.history.back();//后退
+        window.history.forward();//前进
+        window.history.go(-1);//前进
+        window.history.go(1);//后退
+        window.history.go(0);//刷新
+        window.history.go();//刷新
+        window.history.length;//历史记录长度
+        window.history.state;//历史记录状态
+        window.history.pushState({}, "title", "https://www.baidu.com");//添加历史记录
+        window.history.replaceState({}, "title", "https://www.baidu.com");//替换历史记录
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

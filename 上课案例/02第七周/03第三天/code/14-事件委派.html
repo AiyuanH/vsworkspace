@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">添加新的li</button>
+    <ul class="list">
+        <li>数据1</li>
+        <li>数据2</li>
+        <li>数据3</li>
+    </ul>
+
+    <script>
+        /* 点击li标签，打印li中的文本数据
+        let lis = document.querySelectorAll("li");
+        for(let i = 0 ; i < lis.length ; i++){
+            lis[i].addEventListener('click',function(){
+                console.log(lis[i].innerHTML);
+            })
+        }*/
+
+        // 采用事件委派（委托模型，利用事件冒泡的机制）
+        // 将点击的动作添加ul上
+        let ul = document.querySelector(".list");
+        ul.addEventListener('click',function(e){
+            // 在事件触发的时候，通过事件对象，可以知道当前事件具体是在哪个事件源上发生的
+            let t = e.target;
+            console.dir(t.nodeName);
+            if(t.nodeName == 'LI'){
+                console.log(t.innerHTML);
+            }
+            
+        })
+        // 点击按钮添加新的li
+        let btn = document.querySelector(".btn");
+        btn.addEventListener('click',function(){
+            let ul = document.querySelector(".list");
+            ul.innerHTML += "<li>数据新</li>";
+        })
+    </script>
+</body>
+</html>

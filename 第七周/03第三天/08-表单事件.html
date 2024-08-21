@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .username-error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 表单事件：
+         提交事件：点击表单提交按钮将数据提交给action所指的地址
+     
+         验证事件：表单提交前验证表单数据是否合法
+         提交事件：
+             1.表单提交事件
+                onsubmit
+                onreset
+             2.表单验证事件
+                onblur
+                onfocus
+                onchange
+                oninput
+                oninvalid
+                onvalid
+                onformchange
+               onforminput 
+               -->
+
+    <!-- 在这个表单中验证提交的信息在checkForm函数中完成
+               验证成功返回true，验证失败返回false -->
+    <form action="" onsubmit="return checkForm()">
+        <!-- button放在表单中变成提交按钮 submit -->
+        <p>姓名：<input type="text" name="username"> <span class="error"></span></p>
+        <p>密码：<input type="password" name="password"></p>
+        <p>电话：<input type="text" name="phone"></p>
+        <p>住址：<input type="text" name="address"></p>
+        <button type="button">提交</button>
+        <!-- <button type="submit">提交</button> -->
+    </form>
+
+    <script>
+        function checkForm() {
+            //设置个判断的变量
+            let flag = true;
+            //获取姓名输入框
+            let nameInput = document.querySelector("input[name = 'username']");
+            //判断姓名是否为空
+            if (nameInput.value == "" || nameInput.value == null) {
+                //提示姓名不能为空
+                console.log(aaa);
+                
+                document.querySelector(".error".innerHTML = "姓名不能为空")
+                flag = false;
+            } else {
+                //清空提示
+                document.querySelector(".username-error").innerHTML = "";
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

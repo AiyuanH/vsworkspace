@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度</a>
+    <script>
+        let a = document.querySelector("a");
+        a.addEventListener = (click,function(e){
+            //确定弹窗
+            if(window.confirm("确定要跳转吗")){
+                return true;
+            }
+            window.confirm("确定要跳转吗")
+            //阻止事件的默认行为
+            e.preventDefault();
+            //吧a当作按钮哦
+        })
+    </script>
+</body>
+</html>

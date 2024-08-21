@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 250px;
+        }
+        .box1 {
+            background-color: #0a0;
+        }
+        .box2 {
+            border: 10px solid #0af;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1"></div>
+    <button id="btn">点击修改盒子的样式</button>
+    <button id="btn2">点击修改盒子的样式</button>
+    <script>
+        btn.onclick = function () {
+            // 获取到页面的标签对象
+            let box = document.querySelector(".box");
+
+            // 通过标签对象调用style属性，去给标签设置行内样式
+            // css属性名，需要遵守小驼峰
+            box.style.backgroundColor = '#f00';
+            box.style.width = '600px';
+        }
+        btn2.onclick = function () {
+            // 获取到页面的标签对象
+            let box = document.querySelector(".box");
+
+            // 通过js控制标签的class属性
+            // 如果标签的class属性只有一个值，可以直接使用className去操作类名
+            //box.className = 'box2';
+            // 如果标签的class属性有多个值，需要使用classList属性去操作
+            // add方法是给标签添加一个新的类名
+            // remove方法是给标签删除一个类名
+            box.classList.remove('box1');
+            box.classList.add('box2');
+        }
+    </script>
+</body>
+
+</html>

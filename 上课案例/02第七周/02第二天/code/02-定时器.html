@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">停止执行</button>
+    <script>
+        // 如果在全局位置上使用var定义的变量，默认会将其绑定到window对象上
+        let a = 10;
+        // 这里不是在定义name变量，而是在window原有的name属性的值
+        let name = "zhangsan";
+        console.log(window);
+        // 相当于给window对象中添加demo方法
+        function demo() { }
+
+        /*
+            定时器：相当于闹钟 ， 根据时间的变化，可以去执行某段代码
+            setTimeout,一次性定时器：达到执行标准之后，某段代码只执行一次。
+                setTimeout( 代码，多久后开始执行 )
+            setInterval,重复性定时器：达到执行标准之后，某段代码重复性的执行。
+                setInterval( 代码，重复间隔时间 )
+        
+            window.setInterval(function(){
+                console.log("hello");
+            } , 1000 );
+            
+
+            window.setTimeout(function () {
+                console.log("hello");
+            }, 3000);
+
+            清除定时器：
+                clearInterval(定时器标识符)
+                clearTimeout(定时器标识符)
+        */
+        let timeID = window.setInterval(function () {
+            console.log("hello");
+        }, 1000);
+        
+        btn.onclick = function(){
+            window.clearInterval(timeID);
+        }
+    </script>
+
+</body>
+
+</html>

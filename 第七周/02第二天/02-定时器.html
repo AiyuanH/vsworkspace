@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id = "btn">停止</button>
+    <script>
+        //如果在全局位置上使用vat定义的变量默认会将其绑定到window对象上
+        //
+        var a = 10;
+        //这个不是再定义name变量而是在更改window对象的name属性！
+        var name = "zhangsan";
+
+        //都给我用这个let
+        let a2 = 10;
+        let name2 = "zhangsan";
+
+        /*
+        定时器相当于闹钟，根据时间的变化可以执行任务代码
+        一次性定时器  达到某标准之侯执行一次
+！！必须添加一个code和milliseconds参数
+
+     
+        重复性定时器  周期执行
+        */
+        //这个是一次性的定时器
+        setTimeout(function () {
+            console.log("hello world");
+        }, 1000);
+
+        //这个是重复性的定时器
+         window.setInterval(function () {
+            console.log("hello world");
+        }, 1000);
+ 
+
+        //清除定时器
+        
+
+        let timer = window.setInterval(function () {
+            console.log("hello world");
+        }, 1000);
+        //清除定时器
+        //window.clearInterval(timer);
+        
+        //这里可以给一个按钮然后给他停止
+        btn.onclick = function(){
+            window.clearInterval(timer);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

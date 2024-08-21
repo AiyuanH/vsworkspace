@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: #fa0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">我是div1</div>
+    <script>
+        //获取元素对象
+        let div = document.querySelector("div1");
+        //绑定事件
+        div.addEventListener("click", function () {
+            //this指向当前绑定事件的元素对象(也就是标签)
+            console.log("hello world", this);
+        }
+        );
+
+     
+        //这个会改变this的指向
+        div.addEventListener("click",  ()=> {
+            //this指向当前绑定事件的元素对象(也就是标签)
+            console.log("hello world", this);
+        }
+        );
+/* 
+        onclick  点击事件
+            onmouseover  鼠标移入事件
+            onmouseout  鼠标移出事件
+            onmousemove  鼠标移动事件
+            onmousedown  鼠标按下事件
+            onmouseup  鼠标抬起事件
+            onmousewheel  鼠标滚动事件
+            oncontextmenu  鼠标右键事件 */
+
+        /*这个也有点问题哦*/
+        
+
+       
+    </script>
+</body>
+
+</html>

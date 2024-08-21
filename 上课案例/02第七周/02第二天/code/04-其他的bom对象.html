@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="baidu">访问百度</button>
+    <a href="05-history.html">history</a>
+    <script>
+        // 浏览器所在的设备的屏幕相关的一些参数
+        console.log(window.screen);
+
+        // 获取与浏览器自身信息相关的一些参数
+        console.log(window.navigator);
+
+        // location表示浏览器的地址栏
+        console.log(window.location);
+        
+        baidu.onclick = function(){
+            // 修改浏览器地址栏中的地址信息 ， 只要href值被改变，浏览器就会跳转到新的地址
+            //window.location.href = "https://www.baidu.com";
+
+            // 刷新当前页面
+            // window.location.reload();
+            // 将当前页面替换成指定地址对应的页面，无法后退
+            window.location.replace("https://www.baidu.com");
+        }
+        
+        console.log(window.history);
+        
+        
+
+    </script>
+</body>
+</html>

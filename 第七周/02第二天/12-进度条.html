@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .in {
+            background-color: #fa0;
+            width: 0%;
+            height: 30px;
+            border: 0;
+        }
+
+        .out {
+            width: 200px;
+            height: 30px;
+            border: 1px solid #000;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="out">
+        <div class="in"></div>
+    </div>
+    <button id="btn">启动</button>
+
+    <script>
+        let divIn = document.querySelector(".in");
+
+        btn.onclick = function () {
+            //这个是点击按钮的事件
+
+            let a = 2;
+            let timeId = setInterval(function () {
+                a += 10;
+                divIn.style.width = a + '%';
+
+                if(a>=100){
+                    clearInterval(timeId);
+                }
+            }, 100);
+
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

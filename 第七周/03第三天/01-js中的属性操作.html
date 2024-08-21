@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "box" id="demo" name = "lisi" age = "20" data-sex="男"></div>
+    <script>
+        /*html标签属性的分类  Attribute的意思是属性定义*/
+        //原生属性：标签自带的那些属性  可以通过标签对象.属性来获取属性的值直接操作
+        //自定义属性：程序员自定义的属性 data-reactroot 获取这个属性的值必须使用标签.getAttribute("属性名")
+        //删除属性removeAttribute("属性名")
+
+        console.log(div.id);//这个是用标签.属性来获取属性里面的值
+        div.id= "abc";//这个是改了他属性的值
+        // 这个div.id能拿到那个自定义属性不能拿到
+        
+        console.log(div.getAttribute("id"));//这个是获取属性的值
+        div.setAttribute("id", "abc2");//这个是设置属性的值
+        console.log(div.getAttribute("name"));//这个是获取属性的值
+        div.setAttribute("name", "lisi");//这个是设置属性的值
+        console.log(div.getAttribute("age"));//这个是获取属性的值
+        div.setAttribute("age", "20");//这个是设置属性的值
+
+        div.removeAttribute("age");//这个是删除属性的值
+
+
+
+        //-----------------------------------------------------------------------
+        //html5的属性自定义属性必须使用data-"属性名"来定义
+        div.getAttribute("data-sex");
+        div.dataset["sex"]="女";        
+        console.log(dataset[sex]);
+        
+    </script>
+</body>
+</html>

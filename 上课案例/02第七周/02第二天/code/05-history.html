@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>05-history.html</h1>
+    <button id="btn">返回</button>
+    <script>
+        btn.onclick = function(){
+            // 可以使用历史记录对象中的back方法，返回到上个页面
+            // window.history.back();
+            window.history.go(0);
+        }
+    </script>
+</body>
+</html>

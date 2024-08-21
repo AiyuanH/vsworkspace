@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .out {
+            width: 500px;
+            height: 50px;
+            border: 1px solid #fa0;
+        }
+
+        .in {
+            height: 50px;
+            width: 0%;
+            background-color: #0af;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="out">
+        <div class="in"></div>
+    </div>
+    <button>启动</button>
+    <script>
+        let divIn = document.querySelector(".in");
+        // 获取页面的按钮
+        let btn = document.querySelector("button");
+        // 给按钮绑定一个点击的动作
+        let w = 2;
+        btn.onclick = function () {
+            let timeID = setInterval(function () {
+                w += 2;
+                divIn.style.width = w + "%";
+
+                if (w >= 100) {
+                    clearInterval(timeID);
+                }
+            }, 300);
+
+        }
+    </script>
+</body>
+
+</html>

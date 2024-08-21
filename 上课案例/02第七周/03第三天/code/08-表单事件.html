@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            font-size: 14px;
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        表单：运行用户输入或者选择数据，最终可以提交给后端程序
+    -->
+     <form action="" method="get" onsubmit="return checkForm();">
+        <p>
+            姓名：<input type="text" name="username">
+            <span class="error username-error"></span>
+        </p>
+        <p>
+            密码：<input type="password" name="password">
+            <span class="error password-error"></span>
+        </p>
+        <p>电话：<input type="text" name="telephone"></p>
+        <p>住址：<input type="text" name="address"></p>
+        <p><button type="submit">提交</button></p>
+     </form>
+    <script>
+        /*
+            表单事件：
+             提交事件：点击表单中的提交按钮，将表单中的数据提交给action所指的路径
+             失去焦点事件：
+        */
+       function checkForm(){
+            // 定义标记，用于处理验证是否全部通过
+            let flag = true;  
+            let usernameInput = document.querySelector("input[name='username']");
+            if(usernameInput.value == "" || usernameInput.value == null){
+                document.querySelector(".username-error").innerHTML = "用户名不能为空";
+                flag = false;
+            }else{
+                document.querySelector(".username-error").innerHTML = "";
+            }
+
+            let passwordInput = document.querySelector("input[name='password']");
+           if (passwordInput.value == "" || passwordInput.value == null) {
+               document.querySelector(".password-error").innerHTML = "密码不能为空";
+               flag = false;
+           } else {
+               document.querySelector(".password-error").innerHTML = "";
+           }            
+            
+            return flag;
+       }
+   
+       /*
+        input框失去焦点验证
+       */
+      let nameInput = document.querySelector("input[name='username']")
+      nameInput.addEventListener('blur',function(){
+         if (nameInput.value == "" || nameInput.value == null) {
+              document.querySelector(".username-error").innerHTML = "用户名不能为空";
+          } else {
+              document.querySelector(".username-error").innerHTML = "";
+          }
+
+      })
+   
+   </script>
+</body>
+</html>

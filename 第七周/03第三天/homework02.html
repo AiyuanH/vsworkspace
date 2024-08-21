@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课堂实战全选</title>
+</head>
+
+<body>
+    <!-- 4、编程实战：课堂练习（全选）、省市县联动（省市县数据可以自己构建） -->
+
+    省<select name="province" id=""></select>
+    市<select name="city" id=""></select>
+    县<select name="township" id=""></select>
+
+    <script>
+        //第一步要来录入数据
+        let datas = [
+            {
+                province: "河北省",
+                city: [
+                    {
+                        city: "石家庄市",
+                        township: [
+                            "长安区",
+                            "桥西区",
+                            "新华区",
+                            "裕华区",
+                            "井陉矿区",
+                            "井陉县",
+                            "鹿泉县",
+                            "栾城县",
+                            "正定县",
+                        ]
+                    },
+                    {
+                        city: "唐山市",
+                        township: [
+                            "路南区",
+                            "路北区",
+                            "古冶区",
+                            "开平区",
+                            "丰南区",
+                            "丰润区",
+                            "滦县",
+                            "滦南县",
+                            "乐亭县",
+                            "迁西县",
+                        ]
+                    },
+                    {
+                        city: "秦皇岛市",
+                        township: [
+                            "海港区",
+                            "山海关区",
+                            "北戴河区",
+                            "青龙满族自治县",
+                            "昌黎县",
+                            "抚宁县",
+                            "卢龙县",
+                        ]
+                    },
+                ]
+
+            },
+            {
+                province: "河南省",
+                city: [
+                    {
+                        city: "郑州市",
+                        township: [
+                            "中原区",
+                            "二七区",
+                            "管城回族区",
+                            "金水区",
+                            "上街区",
+                            "惠济区",
+                            "中原区",
+                            "二七区",
+                        ]
+                    },
+                    {
+                        city: "开封市",
+                        township: [
+                            "龙亭区",
+                            "顺河回族区",
+                            "鼓楼区",
+                            "禹王台区",
+                            "金明区",
+                            "杞县",
+                            "通许县",
+                            "尉氏县",
+                            "开封县",
+                            "兰考县",
+                        ]
+                    },
+                    {
+                        city: "洛阳市",
+                        township: [
+                            "老城区",
+                            "西工区",
+                            "廛河回族区",
+                            "涧西区",
+                            "吉利区",
+                            "洛龙区",
+                            "孟津县",
+                            "新安县",
+                            "栾川县",
+                            "嵩县",
+                        ]
+                    }
+                ]
+            }
+
+        ];
+
+      /*   //获取省节点
+        let provinces = document.querySelector("select[name = province]");
+        let citys = document.querySelector("select[name = city]");
+        let townships = document.querySelector("select[name = township]");
+        let aa = "";
+        //然后给省节点绑定一个事件并把这个datas里面的值个传进去HTML格式
+        for (let i = 0; i < datas.length; i++) {
+            aa += `<option>${datas[i].province}</option>`;
+        }
+        provinces.innerHTML = aa;
+
+        
+        provinces.addEventListener("change", function () {
+
+
+            let c = datas[provinces.selectedIndex].city;
+            let bb = "";
+            for (let i = 0; i < c.length; i++) {
+                bb += `<option>${c[i].city}</option>`;
+            }
+
+            citys.innerHTML = bb;
+
+            citys.addEventListener("change",function(){
+                let c = datas[provinces.selectedIndex].city;
+                let d = c[citys.selectedIndex].township;
+                let cc = "";
+                for (let i = 0; i < d.length; i++) {
+                    cc += `<option>${d[i]}</option>`;
+                }
+                townships.innerHTML = cc;
+
+            })
+
+        })
+
+ */
+// 获取省、市、县节点
+let provinces = document.querySelector("select[name='province']");
+let citys = document.querySelector("select[name='city']");
+let townships = document.querySelector("select[name='township']");
+
+// 初始化省级下拉列表
+let provinceOptions = datas.map(provinceData => `<option>${provinceData.province}</option>`).join('');
+provinces.innerHTML = provinceOptions;
+
+// 省份选择事件
+provinces.addEventListener("change", function () {
+    let selectedProvinceIndex = provinces.selectedIndex;
+    let cities = datas[selectedProvinceIndex].city;
+
+    // 更新市级下拉列表
+    let cityOptions = cities.map(cityData => `<option>${cityData.city}</option>`).join('');
+    citys.innerHTML = cityOptions;
+
+    // 清空并初始化县级下拉列表
+    townships.innerHTML = `<option value="">请选择县区</option>`;
+    citys.dispatchEvent(new Event('change'));  // 触发城市的 change 事件，以便自动更新县级选项
+});
+
+// 城市选择事件
+citys.addEventListener("change", function () {
+    let selectedProvinceIndex = provinces.selectedIndex;
+    let selectedCityIndex = citys.selectedIndex;
+    let townshipsData = datas[selectedProvinceIndex].city[selectedCityIndex].township;
+
+    // 更新县级下拉列表
+    let townshipOptions = townshipsData.map(township => `<option>${township}</option>`).join('');
+    townships.innerHTML = townshipOptions;
+});
+
+// 自动触发省份的 change 事件以初始化市级和县级下拉列表
+provinces.dispatchEvent(new Event('change'));
+
+
+ 
+      
+
+
+
+    </script>
+</body>
+
+</html>

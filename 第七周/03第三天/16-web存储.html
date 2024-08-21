@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="save">存储按钮</button>
+    <button class="get">获取按钮</button>
+    <button class="remove">删除按钮</button>
+    <button class="clear">删除按钮</button>
+    <script>
+        let save= document.querySelector(".save");
+        save.onclick = function(){
+            //临时存储
+            //保存这个数据到浏览器中关闭浏览器窗口的话这个里面的值就没了哦
+            sessionStorage.setItem("name","zhangsan");
+            sessionStorage.setItem("age","18");
+
+            //获取数据
+            let name = sessionStorage.getItem("name");
+            console.log(name);
+            let age = sessionStorage.getItem("age");
+            console.log(age);
+
+
+            //永久存储
+            //保存这个数据到浏览器中关闭浏览器窗口的话这个里面的值还在哦
+
+            localStorage.setItem("name","zhangsan");
+           
+            console.log("点击了按钮")
+        }
+
+        let get = document.querySelector(".get");
+        get.onclick = function(){
+            //获取数据
+            let name = localStorage.getItem("name");
+            console.log(name);
+        }
+
+        let remove = document.querySelector(".remove");
+        remove.onclick = function(){
+            //删除数据
+            localStorage.removeItem("name");
+        }
+
+        //全部删除clear
+        let clear = document.querySelector(".clear");
+        clear.onclick = function(){
+            localStorage.clear();
+        }
+
+        //多页面传递数据
+        // 只能存字符串哦！！！！！
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课堂实战全选</title>
+</head>
+
+<body>
+    <!-- 4、编程实战：课堂练习（全选）、省市县联动（省市县数据可以自己构建） -->
+
+    省<select name="province" id=""></select>
+    市<select name="city" id=""></select>
+    县<select name="township" id=""></select>
+
+    <script>
+        //第一步要来录入数据
+        let data = [
+            {
+                province: "河北省",
+                city: [
+                    {
+                        city: "石家庄市",
+                        township: [
+                            "长安区",
+                            "桥西区",
+                            "新华区",
+                            "裕华区",
+                            "井陉矿区",
+                            "井陉县",
+                            "鹿泉县",
+                            "栾城县",
+                            "正定县",
+                        ]
+                    },
+                    {
+                        city: "唐山市",
+                        township: [
+                            "路南区",
+                            "路北区",
+                            "古冶区",
+                            "开平区",
+                            "丰南区",
+                            "丰润区",
+                            "滦县",
+                            "滦南县",
+                            "乐亭县",
+                            "迁西县",
+                        ]
+                    },
+                    {
+                        city: "秦皇岛市",
+                        township: [
+                            "海港区",
+                            "山海关区",
+                            "北戴河区",
+                            "青龙满族自治县",
+                            "昌黎县",
+                            "抚宁县",
+                            "卢龙县",
+                        ]
+                    },
+                ]
+
+            },
+            {
+                province: "河南省",
+                city: [
+                    {
+                        city: "郑州市",
+                        township: [
+                            "中原区",
+                            "二七区",
+                            "管城回族区",
+                            "金水区",
+                            "上街区",
+                            "惠济区",
+                            "中原区",
+                            "二七区",
+                        ]
+                    },
+                    {
+                        city: "开封市",
+                        township: [
+                            "龙亭区",
+                            "顺河回族区",
+                            "鼓楼区",
+                            "禹王台区",
+                            "金明区",
+                            "杞县",
+                            "通许县",
+                            "尉氏县",
+                            "开封县",
+                            "兰考县",
+                        ]
+                    },
+                    {
+                        city: "洛阳市",
+                        township: [
+                            "老城区",
+                            "西工区",
+                            "廛河回族区",
+                            "涧西区",
+                            "吉利区",
+                            "洛龙区",
+                            "孟津县",
+                            "新安县",
+                            "栾川县",
+                            "嵩县",
+                        ]
+                    }
+                ]
+            }
+
+        ];
+
+     // 获取省、市、县节点
+let provinces = document.querySelector("select[name='province']");
+let city = document.querySelector("select[name='city']");
+let townships = document.querySelector("select[name='township']");
+
+// 初始化省级下拉列表
+function initProvinces(data) {
+    provinces.innerHTML = `<option value="">请选择省份</option>`;
+    data.forEach((item, index) => {
+        provinces.innerHTML += `<option value="${index}">${item.province}</option>`;
+    });
+}
+
+// 更新市级下拉列表
+function updateCities(data, provinceIndex) {
+    city.innerHTML = `<option value="">请选择城市</option>`;
+    townships.innerHTML = `<option value="">请选择县区</option>`; // 清空县级下拉列表
+
+    if (provinceIndex !== "") {
+        data[provinceIndex].city.forEach((item, index) => {
+            city.innerHTML += `<option value="${index}">${item.city}</option>`;
+        });
+    }
+}
+
+// 更新县级下拉列表
+function updateTownships(data, provinceIndex, cityIndex) {
+    townships.innerHTML = `<option value="">请选择县区</option>`;
+
+    if (provinceIndex !== "" && cityIndex !== "") {
+        data[provinceIndex].city[cityIndex].township.forEach((item) => {
+            townships.innerHTML += `<option>${item}</option>`;
+        });
+    }
+}
+
+// 省份选择事件绑定
+provinces.addEventListener('change', function() {
+    let provinceIndex = this.value;
+    updateCities(data, provinceIndex);
+});
+
+// 城市选择事件绑定
+city.addEventListener('change', function() {
+    let provinceIndex = provinces.value;
+    let cityIndex = this.value;
+    updateTownships(data, provinceIndex, cityIndex);
+});
+
+// 初始化省级选项
+initProvinces(data);
+
+
+
+
+    </script>
+</body>
+
+</html>

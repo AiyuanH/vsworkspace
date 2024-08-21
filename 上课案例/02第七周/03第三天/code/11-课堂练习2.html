@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 省市县的三级联动下拉框 -->
+     <select class="province">
+        <option></option>
+     </select>
+    <select class="city">
+        
+    </select>
+    <select class="county">
+        
+    </select>
+
+    <script>
+        // 准备省市县的数据
+        let datas = [
+                {
+                    name:"河北",
+                    city:[
+                        {
+                            name:"石家庄", 
+                            county:[{name:"桥西区"}, { name: "长安区" }] 
+                        },
+                        {
+                            name:"邯郸",
+                            county: [{ name: "武安区" }, { name: "丛台区" }] 
+                        }, 
+                        { 
+                            name: "秦皇岛",
+                            county: [{ name: "北戴河" }, { name: "海港区" }] 
+                        }
+                    ]
+                },
+                {name:"河南",city:[{name:"郑州"},{name:"洛阳"}, { name: "开封" }, { name: "安阳" }]},
+                {name:"陕西",city:[{name:"西安"},{name:"宝鸡"}, { name: "咸阳" }, { name: "汉中" }]}    
+            ];
+        // 获取省的select，将准备的省的数据加载页面并选择
+        let provinceSelect = document.querySelector(".province"); 
+        // 遍历数组
+        let pros = "";
+        for(let i = 0 ; i < datas.length ; i++){
+            pros += '<option>'+ datas[i].name +'</option>'
+        }
+        // 添加到省的select下面
+        provinceSelect.innerHTML = pros;
+        
+        // 选择某个省份的时候，需要根据当前的省的信息，加载对应的市的信息
+        provinceSelect.addEventListener('change',function(){
+            // 获取到当前选择的省
+            //console.log(datas[provinceSelect.selectedIndex]);
+            // 获取当前选中的省对应的市的数据
+            let c = datas[provinceSelect.selectedIndex].city;
+             let citys = "";
+             for (let i = 0; i < c.length; i++) {
+                citys += '<option>' + c[i].name + '</option>'
+            }
+            let citySelect = document.querySelector(".city");
+            citySelect.innerHTML = citys;
+        })
+    </script>
+</body>
+</html>

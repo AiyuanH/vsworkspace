@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //window.onload = function(){}
+        // 在页面加载完成之后，才会触发load事件
+        window.addEventListener('load',function(){
+            let div = document.querySelector(".box");
+            console.log(div);
+            div.style.width = '200px';
+        })
+    </script>
+</head>
+<body>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br> <br><br> <br> <br><br><br> <br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br> <br><br> <br> <br><br><br> <br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br> <br><br> <br> <br><br><br> <br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br> <br><br> <br> <br><br><br> <br>
+    <div class="box"></div>
+    <script>
+        /*
+        window中的事件
+            load 事件：加载事件，当页面上的所有内容全部加载完成时触发
+            scroll 事件：滚动条的滚动事件
+        */
+       window.addEventListener('scroll',function(){
+        console.log(window.scrollY);
+        
+       })
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" id="demo">演示dom1</div>
+    <div class="box" id="demo">演示dom2</div>
+    <div >演示dom3</div>
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <div>
+        性别：
+        <input type="radio" name="sex" value="男">男
+        <input type="radio" name="sex" value="女">女
+    </div>
+
+    <script>
+        // 获取页面上的html标签
+        let html = document.documentElement;
+        console.log(html);
+        
+        // 获取页面上的body标签
+        let body = document.body;
+        console.log(body);
+
+        // HTML4版本：
+        // getElementById：通过标签的id属性获取标签，id属性值不能重复，如果重复只能获取到第一个
+        let div = document.getElementById("demo");
+        console.log(div);
+
+        // getElementsByClassName:根据页面上标签的class属性值选择标签，最终将所有选中的标签存储在一个数组中
+        let divs = document.getElementsByClassName("box");
+        console.log(divs);
+
+        // getElementsByTagName:根据页面的标签名选择标签，最终将所有选中的标签存储在一个数组中
+        let divArr = document.getElementsByTagName("div");
+        console.log(divArr);
+
+        // getElementsByName:根据页面上的标签的name属性值选择标签，最终将所有选中的标签存储在一个数组中
+        let sex = document.getElementsByName("sex");
+        console.log(sex);
+        
+        
+        // HTML5版本：
+        // querySelector:它需要传递一个css的选择器，返回选中的第一个
+        let d = document.querySelector("#demo");
+        console.log(d);
+
+        // querySelectorAll:通过传递的css的选择器选中所有符合条件的标签，最终将所有选中的标签存储在一个数组中
+        let d2 = document.querySelectorAll('div');
+        console.log(d2);  
+    </script>
+</body>
+</html>

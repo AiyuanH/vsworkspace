@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课堂实战全选</title>
+</head>
+
+<body>
+    <!-- 4、编程实战：课堂练习（全选）、省市县联动（省市县数据可以自己构建） -->
+    <input type="checkbox" class="all">全选
+
+    <!-- 通过全选来选择全部的课程 -->
+    <input type="checkbox" class="revers">反选
+
+    <div>
+        <input type="checkbox" class="skill">java
+        <input type="checkbox" class="skill">js
+        <input type="checkbox" class="skill">html
+        <input type="checkbox" class="skill">css
+        <input type="checkbox" class="skill">vue
+        <input type="checkbox" class="skill">springBoot
+    </div>
+
+    <script>
+        //首先要获取全选的节点
+        let all = document.querySelector(".all");
+        //获取下方的全部节点
+        let skills = document.querySelectorAll(".skill");
+        console.log(all.checked);
+        //获取反选节点
+        let revers = document.querySelector(".revers");
+
+        //然后对节点绑定一个事件如果点击这个节点则下方的skill节点全部选择
+        all.onclick = function () {
+            //当点击这个all的时候遍历skill
+            for (let i = 0; i < skills.length; i++) {
+                if (all.checked) {
+                    skills[i].checked = true;
+                } else {
+                    skills[i].checked = false;
+                }
+            }
+
+        }
+        //反选
+        revers.onclick = function () {
+            for (let i = 0; i < skills.length; i++) {
+                if (revers.checked) {
+                    skills[i].checked = !skills[i].checked;
+                } else {
+                    skills[i].checked = !skills[i].checked;
+                }
+            }
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

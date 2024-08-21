@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #fa0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <button class="btn">按钮点击</button>
+    <script>
+        // 使用w3c给出的dom中的事件绑定函数完成某个事件的绑定
+        let btn = document.querySelector(".btn");
+
+        // 给标签添加事件监听
+        btn.addEventListener('mouseover', function () {
+            console.log(123);
+            let box = document.querySelector('.box');
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            box.style.backgroundColor = `rgb(${r},${g},${b})`;
+        });
+        // 解绑事件
+        //btn.removeEventListener('mouseover')
+
+    </script>
+</body>
+
+</html>

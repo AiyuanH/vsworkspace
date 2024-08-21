@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">添加新标签</button>
+    <div class="box1">div1</div>
+    <div class="box2">div2</div>
+    <div class="box3">div3</div>
+    <script>
+        //这个对按钮btn1绑定点击事件
+        let btn1 = document.getElementById("btn1");
+        btn1.onclick = function () {
+            //首先需要获取页面元素body标签对象哦
+            let _body1 = document.body;
+            // let _body2 = document.querySelector("body");这里面是css选择器？？？
+
+            //再给body中添加新的div 
+            //innerHTML这个是获取标签里面的内容或者给标签里加东西但是注意
+            // _body1.innerHTML += "<div>div4</div>";
+
+            //这个是打印body中的所有内容
+            // console.log(_body2.innerHTML);
+
+            //
+            /*  _body1.innerText += "<div>div4</div>";
+             _body1.textContent += "<div>div4</div>"; 
+
+             */
+//prototype 原型
+
+             //这一部分是创建一个div标签然后添加内容然后添加到body中
+             let div = document.createElement("div")
+             // 创建一个div标签 
+             div.setAttribute("class","abc");
+             //给div标签添加class属性<div class 'abc'> </div>
+             div.innerText = "div4";
+             //给div标签添加内容
+             _body1.appendChild(div);
+             //给body标签添加div标签
+
+             /*
+             在哪查这些更改呢
+             1.最笨的方式就是检查去里面一个一个找
+             2.找一个工具，比如chrome的console
+             3.找一个网站，比如w3school
+             4.找一个网站，比如MDN
+             5.找一个网站，比如jQuery官网
+             6.找一个网站，比如vue官网
+             7.找一个网站，比如react官网
+             8.找一个网站，比如angular官网
+             9.找一个网站，比如nodejs官网
+             10.找一个网站，比如typescript官网
+
+
+             这些我不用 哦老师给发好东西哦DMHTML文档
+            DIV元素 div对象
+            属性行为方法？？？？？？？？
+
+
+             */
+
+
+          
+
+        }
+
+// let btn2 = document.getElementById("btn2");
+//           //增加新标签
+//           btn1.onclick =             //替换新标签
+//             //删除新标签
+
+
+
+    </script>
+</body>
+ 
+</html>

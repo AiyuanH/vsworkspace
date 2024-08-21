@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        需求：一个无需列表，鼠标移动到某个li上的时候，切换对应的背景颜色
+    -->
+    <ul>
+        <li data-bg-color="red">列表1</li>
+        <li data-bg-color="green">列表2</li>
+        <li data-bg-color="blue">列表3</li>
+        <li data-bg-color="deeppink">列表4</li>
+    </ul>
+    
+    <script>
+        // 获取页面上的所有的li标签
+        let lis = document.querySelectorAll("li");
+        for(let i = 0 ; i < lis.length ; i++){
+            // 鼠标移入到某个li的事件
+            lis[i].onmouseover = function(){
+                lis[i].style.backgroundColor = lis[i].dataset['bgColor'];
+            }
+            lis[i].onmouseout = function () {
+                lis[i].style.backgroundColor = "#fff";
+            }
+            
+        }
+    </script>
+</body>
+</html>

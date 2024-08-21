@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" id="demo" name="zhangsan" age="20" data-address="北京">演示js操作标签的属性</div>
+    <div style="background-color: red;font-size: 20px;"></div>
+    <script>
+        /*
+            html标签的属性分为：
+            1、原生（标准）属性：标签本身自带的那些属性
+                可以通过 标签对象.属性名 直接去操作
+
+            2、自定义属性：程序员根据页面的需要自己命名的一些属性
+                如果自定义属性，必须使用dom中提供的属性操作的相关方法来处理
+                标签对象.getAttribute('属性名')
+                标签对象.setAttribute('属性名','属性值')
+                标签对象.removeAttribute('属性名')
+
+            HTML5版本的自定义属性，要求自定义属性必须以 data- 作为前缀    
+
+        */ 
+       let div = document.querySelector(".box");
+       console.log(div.id);
+       div.id = "abc";
+       console.log(div.getAttribute("name"));
+       console.log(div.getAttribute("age"));
+       console.log(div.getAttribute("id"));
+       // 设置属性
+       div.setAttribute("sex",'男');
+       div.removeAttribute("name");
+
+       // html5版本的自定义属性操作
+       //console.log(div.getAttribute("data-address"));
+       console.log(div.dataset['address']);
+       div.dataset['myLike'] = '乒乓球';
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+1、bom：主要负责操作的与浏览器自身相关的一些数据内容
+    location：浏览器地址栏
+        href：可以获取或设置浏览器地址栏的内容
+        reload() ： 重新加载当前页面（刷新）
+    history：浏览器的历史记录
+        back() : 返回到上一个记录
+        forward()：前进到下一个记录
+        go(数字)：根据数字去指定的记录   
+
+    window：全局最大的对象，表示的浏览器的窗口
+        如果使用window中的属性或者方法，可以省略window对象
+        window.name 表示窗口的名称
+        window.scrollY 窗口纵向的滚动条距离顶部的位置
+        window.scrollX 窗口横向的滚动条距离左边的位置
+
+        window.open()  打开一个新页面
+        window.scrollTo()  设置滚动条的位置
+        window.setInterval() 周期性定时器
+        window.setTimeout() 一次性定时器
+        window.clearInterval() 清除周期性定时器
+        window.clearimeout() 清除一次性定时器
+              
+
+2、dom：它主要负责的是操作HTML文件
+    dom的核心思想：dom是w3c制定的一个解析标记型文档（html文件、xml文件）的标准
+    
+    浏览器加载html文件到内存中之后，需要解析html文件中的内容
+    首先将整个html文件解析为document对象
+    html文件中的标签解析为标签对象（Element）
+    html文件中的标签的属性解析为属性对象（Attribute）
+    html文件中的标签中文本解析为文本对象（Text）
+
+    w3cdom解析规范中，将解析标记型文档中的任何对象统称为Node节点。
+
+3、获取标签对象
+    documente.getElementById()    
+    documente.getElementsByTagName()    
+    documente.getElementsByName()    
+    documente.getElementsByClassName()    
+    documente.querySelector()  
+    documente.querySelectorAll() 
+
+    拿到标签对象之后，就可以调用对象中的属性或者方法
+
+    创建标签对象：document.createElement("标签名")
+    添加标签：父标签对象.appendChild(子标签对象)
+    替换标签：父标签对象.replaceChild(新标签，子标签)
+    删除标签：父标签对象.removeChild(子标签对象)
+    删除标签：签对象.remove()
+
+4、标签中添加内容：
+    标签对象.innerHTML = 内容
+    标签对象.innerText = 内容
+    标签对象.textContent = 内容
+
+5、样式操作：
+    操作行内样式：
+        标签对象.style.css样式名 = 样式值;
+
+    操作class属性值：
+        标签对象.className = 类名
+        标签对象.classList.remove(类名) 
+        标签对象.classList.add(类名) 

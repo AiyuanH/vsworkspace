@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <style>
+        .box1 {
+            position: relative;
+            /* 子项父绝 */
+            width: 300px;
+            height: 50px;
+            border: 1px solid #fa0;
+        }
+
+        .box1 input {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            outline: 0;
+            /* 这个是设置输入框的样式 */
+        }
+
+        .box1 .iconfont {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            color: #fa0;
+            cursor: pointer;
+            /* 这个是设置鼠标悬浮样式小手 */
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <input type="text">
+        <span class="iconfont icon-open"></span>
+    </div>
+
+    <script>
+        let span = document.querySelector("iconfont");
+        //这个是获取页面的span标签
+        let input = document.querySelector("input");
+        //这个是获取页面的input标签
+        span.onclick = function () {
+            //设置点击的函数给span标签绑定一个点击的动作
+            if (input.type == 'text') {
+                span.classList.remove("icon-open");
+                //如果输入狂格式是text则不要显示open图标
+                span.classList.add('icon-close');
+                //如果输入狂格式是text则显示close图标
+                input.type = 'password';
+                //如果输入狂格式是text则将输入狂格式改为password
+            } else {
+                span.classList.remove("icon-close");
+                //如果输入狂格式是password则不要显示close图标
+                span.classList.add('icon-open');
+                input.type = 'text';
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

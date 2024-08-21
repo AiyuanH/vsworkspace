@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" class="check-all">全选 
+    <div>
+        <input type="checkbox" name="skill">java
+        <input type="checkbox" name="skill">CSS
+        <input type="checkbox" name="skill">JS
+        <input type="checkbox" name="skill">JavaWEB
+        <input type="checkbox" name="skill">SpringBoot
+    </div>
+
+    <script>
+        // 需要给全选checkbox 绑定事件
+        let checkAll = document.querySelector(".check-all");
+        
+        // 获取页面上所有技能相关的checkbox
+        let skill = document.querySelectorAll("input[name='skill']");
+        
+        // 给全选的checkbox绑定改变事件（点击事件）
+        checkAll.addEventListener('change',function(){            
+            // 遍历技能checkbox数组，取出每个checkbox，然后设置当前是否被勾选
+            for(let i = 0 ; i < skill.length ; i++){
+                // 全选
+                skill[i].checked = checkAll.checked;
+                // 反选
+                // skill[i].checked = !skill[i].checked;
+            }
+        })
+    </script>
+</body>
+</html>

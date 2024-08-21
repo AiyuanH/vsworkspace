@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="save">存储数据</button>
+    <button class="get">获取数据</button>
+    <script>
+        /*
+            json: js对象
+            它的表示有两种方式：数组，对象
+        */
+        let json = ["", "", ""];
+        // 对象中的属性名必须是字符串，值可以是js支持的任意类型
+        let json2 = {
+            "username": "张三",
+            'company': {
+                "name": "东软",
+                "address": "天津"
+            },
+            'job': ['敲代码', '谈需求'],
+            "age": 20,
+            "marry": false,
+        };
+
+        let save = document.querySelector(".save");
+        save.onclick = function () {
+            // JSON中两个重要的方法
+            let d = JSON.stringify(json2);
+            localStorage.setItem("json", d);
+        }
+
+        let get = document.querySelector(".get");
+        get.onclick = function () {
+            let username = localStorage.getItem("json");
+            // 将字符串格式的数据转成JSON格式的对象
+            username = JSON.parse(username);
+            console.log(username);
+
+        }
+
+
+    </script>
+</body>
+
+</html>

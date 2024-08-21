@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <style>
+        .box{
+            position: relative;
+            width: 300px;
+            height: 40px;
+            border: 1px solid #fa0;
+        }
+        .box input{
+            height: 38px;
+            width: 296px;
+            border: 0;
+            outline: 0;
+        }
+        .box .iconfont{
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 30px;
+            color: #fa0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <input type="text">
+        <span class="iconfont icon-open"></span>
+    </div>
+    <script>
+        let span = document.querySelector(".iconfont");
+        let input = document.querySelector("input");
+
+        // 点击span，切换span的class属性和input的type属性
+        span.onclick = function(){
+            if( input.type == 'text' ){
+                span.classList.remove("icon-open");
+                span.classList.add('icon-close');
+                input.type = 'password'; 
+            }else{
+                 span.classList.remove("icon-close");
+                span.classList.add('icon-open');
+                input.type = 'text'; 
+            }          
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #fa0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <!-- 第一种绑定事件：可以直接在标签上使用onxxxx  -->
+    <button class="btn" onclick="fn()">按钮点击</button>
+    <script>
+        /*
+            js中常用的事件名称：
+                click：鼠标点击（单击）
+                dblclick：鼠标双击
+                mouseover : 鼠标在某个标签上面
+                mouseout ： 鼠标从某个标签上离开
+                keydown : 键盘按下
+                keypress ： 键盘按住
+                keyup ： 键盘松开
+                blur ： 失去焦点
+                focus ： 获取焦点
+        */
+       function fn(){
+            let box = document.querySelector('.box');
+            let r = Math.floor(Math.random()*256);
+            let g = Math.floor(Math.random()*256);
+            let b = Math.floor(Math.random()*256);
+            box.style.backgroundColor = `rgb(${r},${g},${b})`;
+       }
+    </script>
+</body>
+</html>

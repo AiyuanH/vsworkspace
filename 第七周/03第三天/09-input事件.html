@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 在输入的过程中需要获取输入的值 -->
+     <!-- input事件 -->
+     <input type="text">
+     <br>
+     <!-- 下拉框的嵌套问题涉及到一个时间 -->
+     <select name="" id="" class="province">
+        <option value="">请选择</option>
+        <option value="">北京</option>
+        <option value="">北京</option>
+        <option value="">北京</option>
+        <option value="">北京</option>
+        <option value="">北京</option>
+        <option value="">北京</option>
+        <option value="">北京</option>
+
+     </select>
+     <script>
+        let input = document.querySelector("input")
+        // input.oninput = function(){
+        //     console.log(this.value)
+        // }
+        //input事件只要输入就会触发
+        input.addEventListener("input",function(){
+            console.log(input.value)
+        })
+
+        //下拉框数据改变事件
+        let select = document.querySelector(".province");
+
+        //change事件
+        select.addEventListener("change",function(){
+            console.log(select.value)
+            //这个不对哦
+        })
+     </script>
+</body>
+</html>

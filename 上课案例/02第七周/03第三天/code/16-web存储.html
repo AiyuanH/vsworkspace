@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="save">存储数据</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除数据</button>
+    <button class="clear">删除所有数据</button>
+
+
+    <script>
+        let save = document.querySelector(".save");
+        save.onclick = function(){
+            localStorage.setItem("username","zhangsan");
+            localStorage.setItem("age","20");
+            localStorage.setItem("address","天津");
+        }
+        
+        let get = document.querySelector(".get");
+        get.onclick = function(){
+           let username = localStorage.getItem("username");
+           console.log(username);
+           
+        }
+
+        let remove = document.querySelector(".remove");
+        remove.onclick = function(){
+          localStorage.removeItem("address")           
+        }
+
+        let clear = document.querySelector(".clear");
+        clear.onclick = function(){
+          localStorage.clear(); 
+        }
+
+    </script>
+</body>
+</html>

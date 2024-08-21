@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <button id="btn">打开</button>
+    <script>
+        /*
+            bom中最大的对象：window，
+            window对象不需要new，只要浏览器打开，window对象就自动存在
+        */
+        console.log(window.name)
+        // 浏览器的窗口中真正显示内容所在的高度
+        console.log(window.innerHeight)
+        // 浏览器的窗口中真正显示内容所在的宽度
+        console.log(window.innerWidth)
+        // 浏览器的窗口的实际高度
+        console.log(window.outerHeight);
+        // 浏览器的窗口的实际宽度
+        console.log(window.outerWidth);
+        
+        // window中的部分方法介绍
+        /*
+        let b = window.confirm("您确定转账吗？")
+        if(b){
+            //
+            window.alert("您已被骗，钱已转出");
+        }else{
+            window.alert("您及时止损");
+        }
+        */
+
+        // 点击按钮打开页面
+        btn.onclick = function(){
+            //window.open("https://www.baidu.com");
+            //window.scrollTo(0,0);
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+        
+
+
+    </script>
+</body>
+</html>

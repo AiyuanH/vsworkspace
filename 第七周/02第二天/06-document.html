@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box" id="demo">演示dom1</div>
+    <div class="box" id="demo">演示dom2</div>
+    <input type="text">
+
+    <script>
+        获取页面上的html标签
+        获取页面上的body标签
+        获取页面上的title标签
+        获取页面上的url
+        获取页面上的域名
+        获取页面上的所有链接
+        获取页面上的所有图片
+        获取页面上的所有表单
+        获取页面上的所有class选择器
+        获取页面上的所有tagName选择器
+        获取页面上的所有name选择器
+        获取页面上的所有id选择器
+        获取页面上的所有name属性值选择器
+        获取页面上的所有name属性值选择器
+
+        /*
+            console.log(document);//文档被加载一定会有document
+            console.log(document.body);//获取body
+            console.log(document.head);//获取head
+            console.log(document.title);//获取title
+            console.log(document.URL);//获取url
+            console.log(document.domain);//获取域名
+            console.log(document.links);//获取所有链接
+            console.log(document.images);//获取所有图片
+            console.log(document.forms);//获取所有表单
+        */
+                                    
+        
+        
+        
+        
+                                            //这个下面都是方法
+
+
+
+        //HTML4版本的时候，id，class，name，tagName，name都可以选择
+        //document的方法getElementById()这个返回的只有一个因为id是唯一的
+        let div = document.getElementById("box");//这个返回的只有一个因为id是唯一的 选择一个
+        console.log(div);
+        document.getElementsByClassName("box");//这个会存储在数组中因为返回来的是s 这个是用来获取类选择器的
+        document.getElementsByTagName("div");//这个也会放到一个数组中 这个是用来获取标签选择器的
+        document.getElementsByName();//这个也会存储到一个数组中 这个是用来获取name选择器的用name属性值来选择的
+
+        /*----------------------------------最好不要混用哦-----------------------------------------------*/
+
+
+        //HTML5版本之后，id，class，name，tagName，name都可以选择
+        //document.querySelector()这个返回的只有一个因为id是唯一的
+        let div1 = document.querySelector("#box");//这个返回的只有一个因为id是唯一的 选择一个
+        console.log(div1);
+        document.querySelectorAll(".box");//这个会存储在数组中因为id是唯一的
+        document.querySelectorAll("div");//这个也会放到一个数组中 这个是用来获取标签选择器的
+        document.querySelectorAll("[name]");//这个也会放到一个数组中 这个是用来获取name选择器的用name属性值来选择的
+        document.querySelectorAll("[name=name]");//这个也会放到一个数组中 这个是用来获取name选择器的用name属性值来选择的
+        document.querySelectorAll("[name='name']");//这个也会放到一个数组中 这个是用来获取name选择器的用name属性值来选择的
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

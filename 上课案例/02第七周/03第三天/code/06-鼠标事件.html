@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #fa0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        console.log(this);
+
+        // 获取标签对象
+        let box = document.querySelector('.box');
+        // 绑定事件
+        box.addEventListener('click', function () {
+            // 函数中的this，为当前事件源（标签对象）
+            console.log(111, this);
+        });
+        box.addEventListener('click', () => {
+            // 函数中的this，为当前事件源（标签对象）
+            console.log(111, this);
+        });
+        box.addEventListener('mouseover', () => {
+            console.log("mouseover");
+        });
+        box.addEventListener('mouseout', () => {
+            console.log("mouseout");
+        });
+    </script>
+</body>
+
+</html>

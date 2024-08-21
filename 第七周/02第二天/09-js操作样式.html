@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 299px;
+            background-color: aquamarine;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .box2 {
+            width: 66px;
+            height: 66px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <button id="btn">点击修改盒子样式</button>
+    <button id="btn2">点击修改盒子样式</button>
+    <button id="btn3">点击修改盒子样式</button>
+
+    <script>
+        //获取标签对象
+
+        //let btn = document.getElementById("btn");
+        btn.onclick = function () {//第一个
+            let box = document.querySelector(".box");
+            //这里需要使用object.style.属性名 = "值"
+            //这个js啊没有下划线哦记得使用小驼峰命名法
+            box.style.width = "300px";
+            box.style.height = "400px";
+            box.style.backgroundColor = "red";
+            box.style.border = "1px solid red";
+            box.style.borderRadius = "50%";
+            box.style.margin = "10px";
+            box.style.padding = "10px";
+            box.style.color = "red";
+        }
+        btn2.onclick = function () {//第二个
+            let box = document.querySelector(".box");
+            box.className = "box2";
+            //如果标签class只有一个值，那么直接写className即可但是如果有多个值，那么需要用classList.add()方法
+        }
+        btn3.onclick = function () {//第三个
+            //add添加新的
+            //remove删除旧的
+            let box = document.querySelector(".box");
+            box.classList.remove = "box";
+
+            box.classList.add("box1");
+        }
+    </script>
+</body>
+
+</html>

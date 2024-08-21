@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+
+        .box3 {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2">
+            <dir class="box3"></dir>
+        </div>
+
+    </div>
+    <script>
+        //绑定事件这个是事件冒泡操作里面的时候外面的也被操作
+
+        //事件冒泡
+        //事件捕获
+        //事件委托
+        //事件代理
+
+        //获取节点
+        let box1 = document.querySelector(".box1");
+        let box2 = document.querySelector(".box2");
+        let box3 = document.querySelector(".box3");
+        //绑定事件  从里往外叫冒泡  从外往里（捕获机制）这个需要给第三个加个true
+        box1.addEventListener("click", function () {
+            console.log("box1");
+        })
+        box2.addEventListener("click", function () {
+            console.log("box2");
+            //阻止事件冒泡
+            e.stopPropagation();
+        })
+        box3.addEventListener("click", function (e) {
+            console.log("box3");
+            //阻止事件冒泡
+            // e.stopPropagation();
+        })
+        /*
+        事件默认有两种处理机制（事件的执行顺序）：在父子标签嵌套的情况下，父子标签注册相同的事件，
+        这时就会触发事件的处理机制，默认冒泡机制。
+        
+        冒泡机制：子标签事件被触发，子标签的处理函数一定会执行，虽然父标签没有直接被触发，
+        而是事件会冒泡到父标签上，导致父标签的事件也会被触发。
+        
+        捕获机制：子标签事件被触发，这时优先执行父标签的事件处理，
+        然后再执行子标签的事件处理。需要使用w3c提供的事件标准注册方式，将第三个参数修改true。
+         */
+    </script>
+</body>
+
+</html>

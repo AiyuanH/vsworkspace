@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-size: 14px;
+
+        }
+
+        ul,
+        il {
+            list-style: none;
+        }
+
+        .box {
+            width: 60%;
+            height: 500px;
+            margin: 0 auto;
+            /* 这个是横向居中 */
+
+        }
+
+        .box_1 {
+            width: 100%;
+            height: 200px;
+            background-color: brown;
+            text-align: center;
+        }
+
+        .box_1 h1 {
+            padding-top: 40px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .box_1 .task {
+            width: 50%;
+            height: 40px;
+        }
+
+        .box_1 button {
+            width: 15%;
+            height: 40px;
+        }
+
+        .box_2 .box_2_1 {
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .box_2 .box_2_1:nth-child(2n) {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box_1">
+            <h1>我的待做清单</h1>
+            <div>
+                <input type="text" placeholder="输入待做任务" class="task">
+                <button class="btn">添加</button>
+            </div>
+        </div>
+        <ul class="box_2">
+            <li class="box_2_1">
+                <span class="task-title">学习打代码</span>
+                <span class="task-del">X</span>
+            </li>
+            <li class="box_2_1">
+                <span class="task-title">学习打代码</span>
+                <span class="task-del">X</span>
+            </li>
+            <li class="box_2_1">
+                <span class="task-title">学习打代码</span>
+                <span class="task-del">X</span>
+            </li>
+    </div>
+    <script>
+        let btn = document.querySelector(".btn");
+        btn.onclick = function () {
+            //首先获取输入框中的字符
+            let input = document.querySelector(".task");
+            console.log(123);
+            
+            //然后再获取ul中的il的父元素
+            let ul = document.querySelector(".box_2");
+            //获取完这个元素就要对这个元素中的值添加了
+            ul.innerHTML += `<li class="box_2_1">
+                <span class="task-title">${input.value}</span>
+                <span class="task-del">X</span>
+            </li>`;
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

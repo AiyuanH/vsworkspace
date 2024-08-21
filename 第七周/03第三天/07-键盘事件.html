@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #fa0;
+            position: absolute;
+            top: 90px;
+            left: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <input type="text">
+    <textarea name="" id=""></textarea>
+    <script>
+        /*
+             onkeydown  键盘按下事件
+            onkeyup  键盘抬起事件
+            onkeypress  键盘按下事件
+        */
+        let box = document.querySelector(".box");
+        //让盒子跑所以呢应该给window弄个事件
+        window.addEventListener("keydown", function (e) {
+            console.log(e.keyCode);
+            switch (e.keyCode) {
+                case 37:    
+                    box.style.left = box.offsetLeft - 10 + "px";
+                    break;
+                case 38:
+                    box.style.top = box.offsetTop - 10 + "px";
+                    break;
+                case 39:
+                    box.style.left = box.offsetLeft + 10 + "px";
+                    break;
+                case 40:
+                    box.style.top = box.offsetTop + 10 + "px";
+                    break;
+
+
+            }
+        })
+
+    </script>
+</body>
+
+</html>

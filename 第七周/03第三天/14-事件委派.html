@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">按钮添加新的li</button>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        let lis = document.querySelectorAll("li");
+        for(let i = 0;i<lis.length;i++){
+            lis[i].addEventListener("click",function(){
+                console.log(this.innerHTML);
+                console.log(lis[i].innerHTML);
+                
+            })
+        }
+        //点击添加新的li
+        
+        // btn.addEventListener("click",function(){
+        //     let li = document.createElement("li");
+        //     li.innerHTML = lis.length+1;
+        //     document.querySelector("ul").appendChild(li);
+        // })
+
+
+        let btn = document.querySelector(".btn");
+        btn.addEventListener("click",function(){
+            //这个会导致原有的li被清空失效
+            let ul = document.querySelector("ul");
+            ul.innerHTML += "<li>"+ (lis.length+1) +"</li>";
+        })
+
+        //采用事件委派（委托模型）
+        //绑到父标签上子标签会冒泡到父标签上
+        document.querySelector("ul").addEventListener("click",function(e){
+            console.log(e.target.innerHTML);
+        })
+
+    </script>
+
+</body>
+</html>

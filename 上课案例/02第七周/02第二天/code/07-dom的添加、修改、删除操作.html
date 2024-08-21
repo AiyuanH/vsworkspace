@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin-top: 20px;
+            width: 200px;
+            height: 150px;
+            background-color: #0a0;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button id="btn1">添加新标签</button>
+    <button id="btn2">将box1替换成a标签</button>
+    <button id="btn3">删除box2标签</button>
+    <div class="box1">div1</div>
+    <div class="box2">div2</div>
+    <div class="box3">div3</div>
+
+    <script>
+        // 添加新标签
+        btn1.onclick = function(){
+            
+            // 获取到页面的body标签
+            //let body = document.body;
+            let body = document.querySelector("body");
+            console.dir(body);
+            
+            // 需要给body中添加一个新的div
+            // 在获取到页面上的标签对象之后，可以去调用当前这个标签对象的属性或者方法
+            // innerHTML属性：获取当前标签中的内容或者给标签中添加内容，html标签会被解析
+            // innerText属性：获取当前标签中的内容或者给标签中添加内容，html标签不解析，会在页面上原样显示
+            // textContent属性：等价于innerText属性
+            //body.innerHTML = "<div>123213123</div>"
+            //body.innerHTML = body.innerHTML  + "<div>123213123</div>"
+            //body.textContent = "<div>123213123</div>"
+
+            // 可以通过document对象动态的创建出新标签
+            // <div></div>
+            let div = document.createElement("div");
+            // <div class='abc'></div>
+            div.setAttribute("class",'abc');
+            // <div class='abc'>123123213</div>
+            div.innerText = "123123213";
+            // 将创建出来的这个div追加到body
+            body.appendChild(div);            
+        }
+   
+        // 替换标签
+        btn2.onclick = function(){
+            let box1 = document.querySelector(".box1");
+            // <a href='https://www.baidu.com'>百度一下</a>
+            let a = document.createElement("a");
+            a.innerText = "百度一下";
+            a.setAttribute("href","https://www.baidu.com");
+            // 需要找到box1这个标签的父标签
+            //console.log(box1.parentNode);
+            box1.parentNode.replaceChild(a , box1);
+        }
+   
+        // 删除标签
+        btn3.onclick = function(){
+            let box2 = document.querySelector(".box2");
+            let box3 = document.querySelector(".box3");
+            // 当前标签被删除
+            //box2.remove();
+            box2.parentNode.removeChild(box3);
+        }
+   
+   </script>
+</body>
+</html>

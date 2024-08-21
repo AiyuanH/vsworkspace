@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li data-color="red">列表1</li>
+        <li data-color="green">列表2</li>
+        <li data-color="gold">列表3</li>
+        <li data-color="deeppink">列表4</li>
+    </ul>
+    <script>
+        //首席按获取页面上的属性
+        let li = document.querySelectorAll("li");
+        for (let i = 0; i < li.length; i++) {
+            //鼠标移入事件
+            li[i].onmouseover =function () {
+                li[i].style.backgroundColor = li[i].dataset["color"];
+            }
+            // li[i].addEventListener = ("mouseout",function () {
+            //     li[i].style.backgroundColor = "#fff"
+            // })
+
+           // 实现对鼠标悬浮样式的修改
+               li[i].onmouseout = function(){
+                   this.style.backgroundColor = "#fff";
+               }
+// ???
+        }
+
+
+    </script>
+</body>
+
+</html>
