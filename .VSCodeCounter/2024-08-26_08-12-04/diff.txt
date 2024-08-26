@@ -1,0 +1,139 @@
+Date : 2024-08-26 08:12:04
+Directory : d:\vsworkspace\第七周
+Total : 90 files,  472 codes, -113 comments, 114 blanks, all 473 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| HTML       |         77 |      1,176 |        -58 |        300 |      1,418 |
+| JSON       |          2 |         28 |          0 |          0 |         28 |
+| JavaScript |          2 |          0 |          0 |          0 |          0 |
+| CSS        |          9 |       -732 |        -55 |       -186 |       -973 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                        | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                           |         90 |        472 |       -113 |        114 |        473 |
+| ..                                                          |         32 |     -2,134 |       -154 |       -439 |     -2,727 |
+| ..\html-css-js                                              |         32 |     -2,134 |       -154 |       -439 |     -2,727 |
+| ..\html-css-js\03第三天                                        |          2 |       -340 |        -27 |       -139 |       -506 |
+| ..\html-css-js\03第三天 (Files)                                |          1 |       -205 |         -1 |        -62 |       -268 |
+| ..\html-css-js\03第三天\css                                    |          1 |       -135 |        -26 |        -77 |       -238 |
+| ..\html-css-js\04第四天                                        |         11 |       -907 |        -33 |       -155 |     -1,095 |
+| ..\html-css-js\04第四天 (Files)                                |          3 |        -98 |         -3 |        -20 |       -121 |
+| ..\html-css-js\04第四天\css                                    |          3 |       -150 |         -9 |        -25 |       -184 |
+| ..\html-css-js\04第四天\fonts                                  |          5 |       -659 |        -21 |       -110 |       -790 |
+| ..\html-css-js\05第五天                                        |          2 |        -66 |        -10 |        -21 |        -97 |
+| ..\html-css-js\四级项目                                         |          3 |       -260 |          0 |        -33 |       -293 |
+| ..\html-css-js\第一天                                          |          9 |       -389 |        -82 |        -77 |       -548 |
+| ..\html-css-js\第一天\html                                     |          9 |       -389 |        -82 |        -77 |       -548 |
+| ..\html-css-js\第二天                                          |          5 |       -172 |         -2 |        -14 |       -188 |
+| ..\html-css-js\第二天\css                                      |          1 |        -15 |         -1 |         -1 |        -17 |
+| ..\html-css-js\第二天\html                                     |          4 |       -157 |         -1 |        -13 |       -171 |
+| 01第一天                                                       |         15 |        568 |          1 |        172 |        741 |
+| 02第二天                                                       |         18 |        734 |          0 |        170 |        904 |
+| 02第二天 (Files)                                               |         15 |        661 |          0 |        161 |        822 |
+| 02第二天\fonts                                                 |          3 |         73 |          0 |          9 |         82 |
+| 03第三天                                                       |         19 |      1,053 |         40 |        162 |      1,255 |
+| 04第四天                                                       |          6 |        251 |          0 |         49 |        300 |
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                    | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\vsworkspace\html-css-js\03第三天\css\博客.css                 | CSS        |       -135 |        -26 |        -77 |       -238 |
+| d:\vsworkspace\html-css-js\03第三天\博客.html                    | HTML       |       -205 |         -1 |        -62 |       -268 |
+| d:\vsworkspace\html-css-js\04第四天\01.html                    | HTML       |        -30 |          0 |         -3 |        -33 |
+| d:\vsworkspace\html-css-js\04第四天\css\mi.css                 | CSS        |        -65 |         -7 |         -8 |        -80 |
+| d:\vsworkspace\html-css-js\04第四天\css\reset.css              | CSS        |        -21 |         -2 |         -6 |        -29 |
+| d:\vsworkspace\html-css-js\04第四天\css\太极.css                 | CSS        |        -64 |          0 |        -11 |        -75 |
+| d:\vsworkspace\html-css-js\04第四天\fonts\demo.css             | CSS        |       -435 |        -19 |        -86 |       -540 |
+| d:\vsworkspace\html-css-js\04第四天\fonts\demo_index.html      | HTML       |       -191 |         -2 |        -19 |       -212 |
+| d:\vsworkspace\html-css-js\04第四天\fonts\iconfont.css         | CSS        |        -16 |          0 |         -4 |        -20 |
+| d:\vsworkspace\html-css-js\04第四天\fonts\iconfont.js          | JavaScript |         -1 |          0 |          0 |         -1 |
+| d:\vsworkspace\html-css-js\04第四天\fonts\iconfont.json        | JSON       |        -16 |          0 |         -1 |        -17 |
+| d:\vsworkspace\html-css-js\04第四天\mi.html                    | HTML       |        -49 |         -3 |        -16 |        -68 |
+| d:\vsworkspace\html-css-js\04第四天\太极.html                    | HTML       |        -19 |          0 |         -1 |        -20 |
+| d:\vsworkspace\html-css-js\05第五天\01.html                    | HTML       |        -16 |          0 |         -2 |        -18 |
+| d:\vsworkspace\html-css-js\05第五天\作业.html                    | HTML       |        -50 |        -10 |        -19 |        -79 |
+| d:\vsworkspace\html-css-js\四级项目\01.html                     | HTML       |        -57 |          0 |         -5 |        -62 |
+| d:\vsworkspace\html-css-js\四级项目\02.html                     | HTML       |       -126 |          0 |        -18 |       -144 |
+| d:\vsworkspace\html-css-js\四级项目\03.html                     | HTML       |        -77 |          0 |        -10 |        -87 |
+| d:\vsworkspace\html-css-js\第一天\html\01-demo.html            | HTML       |        -48 |         -7 |         -7 |        -62 |
+| d:\vsworkspace\html-css-js\第一天\html\01-自定义列表.html           | HTML       |        -18 |          0 |         -6 |        -24 |
+| d:\vsworkspace\html-css-js\第一天\html\03.css                  | CSS        |         -9 |          0 |         -1 |        -10 |
+| d:\vsworkspace\html-css-js\第一天\html\06-完整的表格.html           | HTML       |        -21 |        -16 |         -4 |        -41 |
+| d:\vsworkspace\html-css-js\第一天\html\10-表单标签.html            | HTML       |        -54 |         -2 |        -10 |        -66 |
+| d:\vsworkspace\html-css-js\第一天\html\11-input标签的type属性值.html | HTML       |        -34 |        -22 |         -7 |        -63 |
+| d:\vsworkspace\html-css-js\第一天\html\12-表单其他属性值 .html        | HTML       |        -44 |        -30 |        -10 |        -84 |
+| d:\vsworkspace\html-css-js\第一天\html\简历01.html               | HTML       |        -52 |         -5 |        -12 |        -69 |
+| d:\vsworkspace\html-css-js\第一天\html\简历02.html               | HTML       |       -109 |          0 |        -20 |       -129 |
+| d:\vsworkspace\html-css-js\第二天\css\02-通用选择器.css             | CSS        |        -15 |         -1 |         -1 |        -17 |
+| d:\vsworkspace\html-css-js\第二天\html\02-通用选择器.html           | HTML       |        -29 |          0 |          0 |        -29 |
+| d:\vsworkspace\html-css-js\第二天\html\03-字体样式.html            | HTML       |        -58 |          0 |         -9 |        -67 |
+| d:\vsworkspace\html-css-js\第二天\html\04-文本样式.html            | HTML       |        -44 |          0 |         -2 |        -46 |
+| d:\vsworkspace\html-css-js\第二天\html\10-盒子模型.html            | HTML       |        -26 |         -1 |         -2 |        -29 |
+| d:\vsworkspace\第七周\01第一天\01-js函数定义.html                     | HTML       |         30 |          1 |         11 |         42 |
+| d:\vsworkspace\第七周\01第一天\02-函数调用.html                       | HTML       |         28 |          0 |          6 |         34 |
+| d:\vsworkspace\第七周\01第一天\03-函数使用细节.html                     | HTML       |         36 |          0 |          9 |         45 |
+| d:\vsworkspace\第七周\01第一天\04-函数返回值.html                      | HTML       |         38 |          0 |         16 |         54 |
+| d:\vsworkspace\第七周\01第一天\05-函数联系.html                       | HTML       |         28 |          0 |         13 |         41 |
+| d:\vsworkspace\第七周\01第一天\06-函数递归.html                       | HTML       |         51 |          0 |          7 |         58 |
+| d:\vsworkspace\第七周\01第一天\07-变量作用域.html                      | HTML       |         27 |          0 |          8 |         35 |
+| d:\vsworkspace\第七周\01第一天\08-let和var定义变量.html                | HTML       |         33 |          0 |          2 |         35 |
+| d:\vsworkspace\第七周\01第一天\09-全局函数.html                       | HTML       |         49 |          0 |         17 |         66 |
+| d:\vsworkspace\第七周\01第一天\10-数组.html                         | HTML       |         32 |          0 |          7 |         39 |
+| d:\vsworkspace\第七周\01第一天\11-基于下标的数组操作.html                  | HTML       |         44 |          0 |         14 |         58 |
+| d:\vsworkspace\第七周\01第一天\12-数组的方法.html                      | HTML       |         46 |          0 |         11 |         57 |
+| d:\vsworkspace\第七周\01第一天\homework01.html                    | HTML       |         27 |          0 |          7 |         34 |
+| d:\vsworkspace\第七周\01第一天\homework02.html                    | HTML       |         22 |          0 |          5 |         27 |
+| d:\vsworkspace\第七周\01第一天\homework03.html                    | HTML       |         77 |          0 |         39 |        116 |
+| d:\vsworkspace\第七周\02第二天\01-BOM对象.html                      | HTML       |         63 |          0 |         11 |         74 |
+| d:\vsworkspace\第七周\02第二天\02-定时器.html                        | HTML       |         45 |          0 |         16 |         61 |
+| d:\vsworkspace\第七周\02第二天\03-随机点名.html                       | HTML       |         16 |          0 |          5 |         21 |
+| d:\vsworkspace\第七周\02第二天\04-其他的BOM对象.html                   | HTML       |         29 |          0 |          5 |         34 |
+| d:\vsworkspace\第七周\02第二天\05-history.html                    | HTML       |         23 |          0 |          4 |         27 |
+| d:\vsworkspace\第七周\02第二天\06-document.html                   | HTML       |         58 |          0 |         22 |         80 |
+| d:\vsworkspace\第七周\02第二天\07-dom的添加修改删除操作.html               | HTML       |         70 |          0 |         21 |         91 |
+| d:\vsworkspace\第七周\02第二天\08-dom中的属性介绍.html                  | HTML       |         29 |          0 |          4 |         33 |
+| d:\vsworkspace\第七周\02第二天\09-js操作样式.html                     | HTML       |         60 |          0 |          8 |         68 |
+| d:\vsworkspace\第七周\02第二天\10-dom练习.html                      | HTML       |         93 |          0 |         18 |        111 |
+| d:\vsworkspace\第七周\02第二天\11-demo练习.html                     | HTML       |         62 |          0 |         11 |         73 |
+| d:\vsworkspace\第七周\02第二天\12-进度条.html                        | HTML       |         41 |          0 |         18 |         59 |
+| d:\vsworkspace\第七周\02第二天\fonts\iconfont.css                 | CSS        |         28 |          0 |          8 |         36 |
+| d:\vsworkspace\第七周\02第二天\fonts\iconfont.js                  | JavaScript |          1 |          0 |          0 |          1 |
+| d:\vsworkspace\第七周\02第二天\fonts\iconfont.json                | JSON       |         44 |          0 |          1 |         45 |
+| d:\vsworkspace\第七周\02第二天\homework01.html                    | HTML       |         32 |          0 |          6 |         38 |
+| d:\vsworkspace\第七周\02第二天\homework02.html                    | HTML       |         25 |          0 |          6 |         31 |
+| d:\vsworkspace\第七周\02第二天\homework03.html                    | HTML       |         15 |          0 |          6 |         21 |
+| d:\vsworkspace\第七周\03第三天\01-js中的属性操作.html                   | HTML       |         32 |          0 |          7 |         39 |
+| d:\vsworkspace\第七周\03第三天\02-自定义属性练习.html                    | HTML       |         34 |          0 |          6 |         40 |
+| d:\vsworkspace\第七周\03第三天\03-事件的绑定方式.html                    | HTML       |         54 |          8 |          6 |         68 |
+| d:\vsworkspace\第七周\03第三天\04-通过标签对象绑定事件.html                 | HTML       |         56 |          1 |          4 |         61 |
+| d:\vsworkspace\第七周\03第三天\05-通过标准模式绑定事件.html                 | HTML       |         63 |          1 |          7 |         71 |
+| d:\vsworkspace\第七周\03第三天\06-鼠标事件.html                       | HTML       |         44 |          0 |          9 |         53 |
+| d:\vsworkspace\第七周\03第三天\07-键盘事件.html                       | HTML       |         49 |          0 |          7 |         56 |
+| d:\vsworkspace\第七周\03第三天\08-表单事件.html                       | HTML       |         40 |         22 |          9 |         71 |
+| d:\vsworkspace\第七周\03第三天\09-input事件.html                    | HTML       |         39 |          3 |          3 |         45 |
+| d:\vsworkspace\第七周\03第三天\10-课堂练习.html                       | HTML       |         22 |          0 |          5 |         27 |
+| d:\vsworkspace\第七周\03第三天\12-窗口事件.html                       | HTML       |         39 |          0 |          5 |         44 |
+| d:\vsworkspace\第七周\03第三天\13-事件处理机制.html                     | HTML       |         65 |          0 |         10 |         75 |
+| d:\vsworkspace\第七周\03第三天\14-事件委派.html                       | HTML       |         42 |          0 |          8 |         50 |
+| d:\vsworkspace\第七周\03第三天\15-事件返回值.html                      | HTML       |         24 |          0 |          0 |         24 |
+| d:\vsworkspace\第七周\03第三天\16-web存储.html                      | HTML       |         50 |          0 |         11 |         61 |
+| d:\vsworkspace\第七周\03第三天\17-json.html                       | HTML       |         26 |          1 |          1 |         28 |
+| d:\vsworkspace\第七周\03第三天\homework01.html                    | HTML       |         50 |          2 |         13 |         65 |
+| d:\vsworkspace\第七周\03第三天\homework02 copy.html               | HTML       |        155 |          1 |         20 |        176 |
+| d:\vsworkspace\第七周\03第三天\homework02.html                    | HTML       |        169 |          1 |         31 |        201 |
+| d:\vsworkspace\第七周\04第四天\01-结构赋值.html                       | HTML       |         43 |          0 |         15 |         58 |
+| d:\vsworkspace\第七周\04第四天\02-展开运算符.html                      | HTML       |         63 |          0 |         13 |         76 |
+| d:\vsworkspace\第七周\04第四天\03-模板字符串.html                      | HTML       |         27 |          0 |          3 |         30 |
+| d:\vsworkspace\第七周\04第四天\04-对象简写.html                       | HTML       |         43 |          0 |          6 |         49 |
+| d:\vsworkspace\第七周\04第四天\05-类.html                          | HTML       |         50 |          0 |          8 |         58 |
+| d:\vsworkspace\第七周\04第四天\06-练习.html                         | HTML       |         25 |          0 |          4 |         29 |
+| Total                                                       |            |        472 |       -113 |        114 |        473 |
++-------------------------------------------------------------+------------+------------+------------+------------+------------+

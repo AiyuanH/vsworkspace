@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = 'why';
+        let age = 18;
+        let height = 1.88;
+        let h = 1.88;
+
+        // ES5
+        let person = {
+            name: name,
+            age: age,
+            height: height
+        }
+
+        console.log(person)
+
+        // ES6中可以将属性名和属性值定义为同一个变量单写一个
+        // 语法：属性名和属性值定义为同一个变量
+        let person2 = {
+            name,
+            age,
+            height,
+            h,
+            say:function(){
+                console.log('hello world',this.name);
+
+            },//这个不是函数的简化样式
+            eat(){
+                console.log('吃饭',this.name);
+            }//这个时函数的简化样式
+            //省略了冒号和function 
+            //不可以使用箭头函数
+            //eat:()=>{
+            //    console.log('吃饭',this.name);
+            //}不可用！！！！！！
+          
+        }
+
+        console.log(person2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let str = "hello world";
+        //将每个字符存储到数组中
+        let arr = [];
+        for (let i = 0; i < str.length; i++) {
+            arr.push(str.charAt(i));//添加一个元素尾部添加
+        }
+        console.log(arr);
+        /*********************字符串展开******************************/
+        //ES6中的字符串展开运算符
+        let arr2 = [...str];//一个一个拿出来放到数组中
+        console.log(arr2);
+
+        /*********************数组展开******************************/
+        //ES6中的数组展开运算符
+        let arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let arr4 = ['a', 'b'];
+        // let arr5 = arr3.concat(arr4);
+        //将两个数组合并成一个数组
+        let arr5 = [...arr3, ...arr4];
+
+
+        /*********************对象展开******************************/
+        //展开对象
+        let obj = {
+            name: '张三',
+            age: 18,
+            sex: '男',
+            company:{
+                name:'百度',
+                address:'北京'
+            }
+        };
+        let obj2 = {
+            ...obj,
+            'name': '李四'
+        };//展开对象并给他赋值
+        console.log(obj2);
+
+        // 当引用指向同一个对象会更改全部就需要拷贝一份
+        let obj3 = { ...obj };//拷贝了哦
+        obj3.name = '王五';
+        obj3.company.name = '腾讯';
+        //!!!!!浅拷贝   只拷贝了对象最外层数据当更改内层数据的时候会更改全部
+        console.log(obj3);
+        console.log(obj);
+
+        //深拷贝
+        let obj4 = JSON.stringify(obj);//将obj弄成字符串然后给他赋值
+        obj4 = JSON.parse(obj4);//然后再变成对象赋值回去
+        obj4.name = '赵六';
+        obj4.company.name = '阿里';
+        console.log(obj4);
+
+        /*********************函数展开******************************/
+        function fn(...args) {
+            console.log(args);
+        }
+        
+
+
+    </script>
+</body>
+
+</html>

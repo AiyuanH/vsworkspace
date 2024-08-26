@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 10;
+        console.log(a);
+        
+        let b = 20;
+        console.log(b);
+        setTimeout(() => {
+            console.log('abc');//这个最后执行！！！异步执行a 等所有主线程的执行完
+            //js是单线程
+        }, 2000);
+        let c = 30;
+        console.log(c);
+
+        for (let i = 0; i < 10; i++) {
+            console.log(i);
+        }
+        
+
+    </script>
+</body>
+</html>

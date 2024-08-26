@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let a = arr[0];
+        let b = arr[1];
+        let c = arr[2];
+
+
+        //ES6解构赋值 便捷语法
+        let [aa, bb, cc] = arr;
+
+        //解构字符串
+        let str = "hello world";
+        let [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10] = str;
+        console.log(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+
+        //解构对象
+        let obj = { name: "张三", age: 18, sex: "男" };//这里json格式的对象name不写字符串
+
+        let { name:username, age, sex } = obj;//如果想起个别名就得用冒号因为对象中没有这个属性就需要起别名
+        //解构函数的参数
+        console.log(username, age, sex);
+
+
+
+        function fn({ name, age, sex }) {
+            console.log(name, age, sex);
+        }
+        function fn2([a1,a2]){
+            console.log(arr);//这个是接受全部数据
+            //如果想接受部分数据括号里面弄一个解构
+            console.log(a1,a2);
+        }
+
+        //部分对象
+        function fn({ name, age }) {
+            console.log(name, age);//解构对象的这两个属性
+        }
+
+
+        //ES6中交换值
+        let aaa = 1;
+        let bbb = 2;
+        [aaa, bbb] = [bbb, aaa];
+
+    </script>
+</body>
+
+</html>

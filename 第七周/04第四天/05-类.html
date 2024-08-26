@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES6之前的类
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        let p1 = new Person('张三',18);
+        console.log(p1);
+
+        //ES6的类
+        class Person{
+            //构造函数用来初始化对象
+            //构造函数的名字必须与类名相同 
+            //构造函数不能有返回值
+            //constructor
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+
+            //定义方法
+            say(){
+                console.log('hello',this.name);
+            }
+
+            static sayHello(){
+                console.log('hello');
+            }//静态方法
+
+            static num = 100;//静态属性
+        }
+        let p2 = new Person('张三',18);//创建对象并赋值
+        p2.say();//调用函数的方法
+        Person.sayHello();//静态的只能通过类名去调用不能用对象去调用
+        Person.num;//静态的只能通过类名去调用不能用对象去调用
+
+
+        //箭头函数lambda函数
+        //箭头函数没有this，没有arguments，没有prototype，没有new.target，没有super，没有constructor
+        //如果参数只有一个可以省略小括号（括号内写参数） 没有参数小括号必须写
+        //如果函数体只有一条语句可以省略   大括号
+        //如果函数体只有一条语句可以省略   return关键字
+        //如果函数体只有一条语句可以省略   分号
+        let fn = () => {
+        }
+
+        
+    </script>
+</body>
+</html>
