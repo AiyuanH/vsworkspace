@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js库 -->
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <!-- 视图区域：用于展示数据的页面基本结构 -->
+    <div id="app">
+        <!-- 
+            v-on指令，用于在页面上绑定事件，可以将v-on 简化书写为@
+            如果在绑定事件的时候，没有书写（）或者书写（）没有传递参数，vue默认给函数中传递是当前的事件对象本身
+            <button v-on:事件名='函数名'>点我</button>  
+            <button v-on:事件名='函数名()'>点我</button>  
+            <button v-on:事件名='函数名(实际参数)'>点我</button>  
+        -->
+        <button v-on:click="demo">点我</button>
+        <button v-on:click="demo2">点我</button>
+        <!-- 演示不传递参数 -->
+        <button v-on:click="demo3()">点我</button>
+        <!-- 演示递参数 -->
+        <button v-on:click="demo4(123)">点我</button>
+        <!-- 介绍事件对象 -->
+        <button v-on:click="demo5">事件对象</button>
+        <!-- 
+            如果绑定事件的同时还需要传递参数和事件对象
+            这时必须手动书写 $event 作为事件的实际参数进行传递
+        -->
+        <button v-on:click="demo6($event,'aaaa')">事件对象</button>
+    </div>
+    <script>
+        // 创建Vue的实例
+        const app = Vue.createApp({
+            // 定义函数
+            methods: {
+                demo: function () {
+                    console.log("123");
+                },
+                demo2() {
+                    console.log("demo2");
+                },
+                demo3() {
+                    console.log("demo3");
+                },
+                demo4(a) {
+                    console.log("a", a);
+                },
+                demo5(a) {
+                    console.log("a", a);
+                },
+                demo6(a, b) {
+                    console.log("a", a);
+                    console.log("b", b);
+                },
+            }
+        });
+        // 将Vue与页面绑定
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

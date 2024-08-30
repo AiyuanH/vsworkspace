@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        通过script标签引入Vue3的js库代码，可以在当前页面上直接使用Vue
+
+        Vue的核心思想：不操作dom，通过数据的变化来更新dom（数据驱动页面）
+    -->
+    <script src="./vue/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+        <button @click="add">加+1</button>
+        <ul>
+            <li v-for="item in  users">
+                姓名：{{item.username}} 年龄：{{item.age}}性别：{{item.sex}}
+            </li>
+        </ul>
+        <input type="text" v-model="address">
+    </div>
+
+    <script>
+        // 使用Vue3 JS 库
+        // 使用Vue中的createApp 方法，来创建出一个Vue的对象（实例）
+
+        let app = Vue.createApp({
+            // 定义Vue实例中，可以让页面上使用的数据
+            data(){
+                return{
+                    a:10,
+                    b:20,
+                    message:"您好",
+                    users:[
+                        {username:"zhangsan",age:20,sex:"男"},
+                        {username:"李四",age:22,sex:"男"},
+                        {username:"王五",age:25,sex:"男"},
+                        {username:"赵六",age:27,sex:"男"},
+                        {username:"田七",age:12,sex:"女"},
+                    ],
+                    address:"",
+                }
+            },
+            methods:{
+                add(){
+                    console.log(this.a++);
+                    this.users.push({username:"xxx",age:18,sex:"nv"})
+                }
+            },
+            watch: {
+                address(newValue,oldValue){
+                    console.log(newValue,oldValue);
+                }
+            },
+
+        });
+        // 将Vue实例与页面上需要Vue控制的区域进行绑定
+        app.mount("#app");
+    </script>
+</body>
+</html>

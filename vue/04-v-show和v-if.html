@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/vue/vue/vue.js"></script>
+
+    <style>
+        .box {
+            margin-top: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 视图区域展示数据页面基础结构 -->
+    <!-- v-show和v-if的区别
+    替换隐藏频率高用show但是不安全 替换隐藏频率低用if
+    v-show:控制元素是否显示，不占位
+    v-if:控制元素是否显示，占位
+    v-show和v-if的区别：
+   
+    v-show只是display改成了none会技术的还可以改
+    比如页面的切换 
+
+    v-if删除DOM树标签没了，v-show只是隐藏了
+
+    
+   
+     -->
+
+    <div id="app">
+        <div class="box" v-show="isShow">盒子</div>
+        <div class="box" v-if="isShow">盒子</div>
+        <button v-on:click="isShow=!isShow">隐藏或显示</button>
+
+
+
+    </div>
+    <script>
+        //创建vue的实例
+        const app = Vue.createApp({
+            data() {
+                return {
+
+                    isShow: true
+
+                }
+            }
+        });
+        //准备数据定义变量
+        app.mount("#app");
+
+    </script>
+
+</body>
+
+</html>

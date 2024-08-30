@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/vue/vue/vue.js"></script>
+</head>
+
+<body>
+
+    <!-- 视图区域展示数据页面基础结构 -->
+    <div id="app">
+        <dl>
+
+            <!-- template是模板的意思虚拟标签不在页面上显示但可以配合vue渲染 -->
+
+            <template v-for="item in news">
+                <dt>{{item.title}}</dt>
+                <dd v-for="subItem in item.subTitle">{{subItem}}</dd>
+                <dd>{{item.title}}</dd>
+
+            </template>
+
+
+        </dl>
+
+        <!-- v-for遍历语法
+            遍历数组
+            for参数如果是一个变量那么变量中的存储时数组的值
+            for参数如果是一个字符串那么字符串中的内容是数组的索引
+            如果是两个变量那么第一个数组的值是第二个的下标 
+        -->
+        <p v-for="aaa in arr">{{aaa}}</p>
+        <p v-for="(a, b) in arr">{{a}}--{{b}}</p>
+        <!-- 前面的是下标 后面的是数组的值 -->
+        <p v-for="(a, b) in arr">{{b}}--{{a}}</p>
+        <!-- 遍历对象
+         一个参数表示对象中遍历出来的属性值 
+         两个参数b表示对象中遍历出来的属性名 -->
+
+
+        <p v-for="(value, key) in obj">{{key}}--{{value}}</p>
+        <!-- 使用的时候v-for不管遍历什么都需要配合v-bind:key属性一起使用，提供唯一的key值二次渲染 -->
+         <p v-for="(value, key) in obj" v-bind:key="key">{{value}}</p>
+        
+        <p v-for="(value, key) in obj">{{value}}</p>   
+        <!-- 使用的时候v-for不管遍历什么都需要配合v-bind:key属性一起使用，提供唯一的key值二次渲染 -->
+        
+            
+         <p v-for="(value, key) in obj" v-bind:key="key">{{value}}</p>
+
+    </div>
+    <script>
+        //创建vue的实例
+        const app = Vue.createApp({
+            data() {
+                return {
+                    news: [
+                        {
+                            title: '新闻1', subTitle: ["afdafd", "adfa"]
+                        },
+                        {
+                            title: '新闻2', subTitle: ["afdafd", "adfa"]
+                        }
+                    ],
+                    arr: [11, 22, 33, 44, 55],
+                    obj: {
+                        name: '张三',
+                        age: 18,
+                        sex: '男'
+                    }
+                }
+            },
+
+            //定义函数
+
+        });
+        //准备数据定义变量
+        app.mount("#app");
+
+    </script>
+
+</body>
+
+</html>

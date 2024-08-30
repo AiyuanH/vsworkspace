@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/vue/vue/vue.js"></script>
+</head>
+
+<body>
+
+    <!-- 视图区域展示数据页面基础结构 -->
+    <div id="app">
+
+
+        <!-- 插值表达式：胡须表达式 -->
+        <!-- {{age}}中间写常量变量表达式调用语句 -->
+         <p>{{age}}</p>
+         <p>{{name}}</p>
+         <p>{{age+1}}</p>
+         <p>{{age>18?'成年人':'未成年人'}}</p>
+         <p>{{name+'今年'+age+'岁了'}}</p>
+         <p>{{name.length}}</p>
+         <p>{{name.toUpperCase()}}</p>
+         <p>{{name.toLowerCase()}}</p>
+         <p>{{name.split('')}}</p>
+         <p>{{name.split('').reverse().join('')}}</p>
+         
+    </div>
+    <script>
+        //创建vue的实例
+        const app = Vue.createApp({
+            data() {
+                return {
+                    //定义vue的变量
+                    age: 20,
+                    name: '张三'
+                }
+            },
+    
+            //定义函数
+            // methods: {
+            //     return "demo";
+            // }
+        });
+        //准备数据定义变量
+        app.mount("#app");
+
+    </script>
+
+</body>
+
+</html>

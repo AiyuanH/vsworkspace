@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/vue/vue/vue.js"></script>
+</head>
+
+<body>
+
+    <!-- 视图区域展示数据页面基础结构 -->
+    <div id="app">
+
+
+        <!-- 插值表达式：胡须表达式 -->
+        <!-- {{age}}中间写常量变量表达式调用语句 -->
+        <p>{{msg}}</p>
+        <!-- vue的指令： -->
+        <!-- 这个是展示html的演示哦 这个解析-->
+        <p v-html="msg1"></p>
+        <!-- 这个是展示文本的内容哦 不解析html的标签-->
+        <p v-text="msg2"></p>
+
+
+
+    </div>
+    <script>
+        //创建vue的实例
+        const app = Vue.createApp({
+            data() {
+                return {
+                    //这个标签解析不了
+                    msg1: "nini<b>ni</b>nini",
+                    msg2: "nini<b>ni</b>nini"
+                }
+            },
+
+            //定义函数
+
+        });
+        //准备数据定义变量
+        app.mount("#app");
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js库 -->
+    <script src="./vue/vue.js"></script>
+
+</head>
+
+<body>
+    <!-- 视图区域：用于展示数据的页面基本结构 -->
+    <div id="app">
+        <p><input type="text" placeholder="请输入账号" v-model="account"></p>
+        <p><input type="password" placeholder="请输入密码" v-model="password" @keydown.enter="addData"></p>
+        <p><button @click="addData">提交</button></p>
+    </div>
+    <script>
+        // 创建Vue的实例
+        const app = Vue.createApp({
+            data() {
+                return {
+                    account: "",
+                    password: ""
+                }
+            },
+            methods:{
+                addData(){
+                    console.log(this.account,this.password);
+                }
+            }
+        });
+        // 将Vue与页面绑定
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

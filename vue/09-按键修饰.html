@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/vue/vue/vue.js"></script>
+</head>
+
+<body>
+
+    <!-- 视图区域展示数据页面基础结构 -->
+    <div id="app">
+<p><input type="text" placeholder="请输入账号" v-model="account"></p>
+<!-- 这个给密码框绑定了一个回车事件是一个按键事件 -->
+<p><input type="password" placeholder="请输入密码" v-model="password" @keydown.enter="addData"></p>
+<button @click = "addData">提交</button>
+    </div>
+    <script>
+        //创建vue的实例
+        const app = Vue.createApp({
+            data() {
+                return {
+                    //定义vue的变量
+                    account: "",
+                    password: ""
+                }
+            },
+
+            methods: {
+                addData() {
+                    console.log(this.account, this.password);
+                }
+            }
+    
+            //定义函数
+            // methods: {
+            //     return "demo";
+            // }
+        });
+        //准备数据定义变量
+        app.mount("#app");
+
+    </script>
+
+</body>
+
+</html>

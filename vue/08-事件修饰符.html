@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/vue/vue/vue.js"></script>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        .box3{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- 视图区域展示数据页面基础结构 -->
+    <div id="app">
+       
+
+       <!-- 事件修饰符可以快速地完成对事件的某些修饰 
+            .stop 阻止捕获事件的冒泡
+            .prevent 阻止默认事件
+            .once 只执行一次
+            .capture 捕获事件
+            .self 阻止事件在当前元素触发
+            .passive 添加事件监听器时使用事件对象，但会阻止默认行为
+            .passive="true"
+
+            @这个是绑定事件的语法 
+             @click="demo1" 
+             @click.stop="demo1" 
+             @click.prevent="demo1" 
+             @click.once="demo1" 
+             @click.capture="demo1" 
+             @click.self="demo1" 
+             @click.passive="demo1" 
+
+
+       -->
+
+         
+<!-- 事件修饰符可以快速地完成对事件的某些修饰 -->
+
+        <div class="box3" @click = "demo3">
+            <div class="box2" @click.self.stop="demo2">
+                <!-- 这个是阻止捕获事件的冒泡 -->
+                <div class="box1" @click.stop="demo1">
+                <div class="box" @click.once="demo1">
+
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        //创建vue的实例
+        const app = Vue.createApp({
+            methods:{
+                demo1:function(){
+                    console.log("demo3");
+                    
+                },
+                demo2:function(){
+                    console.log("demo2");
+                    
+                },
+                demo3:function(){
+                    console.log("demo1");
+                    
+                }
+            }
+
+            //定义函数
+
+        });
+        //准备数据定义变量
+        app.mount("#app");
+
+    </script>
+
+</body>
+
+</html>

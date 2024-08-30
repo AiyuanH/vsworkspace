@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js库 -->
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <!-- 视图区域：用于展示数据的页面基本结构 -->
+    <div id="app">
+        <p>视图区域：视图区域： {{ msg }} 视图区域：视图区域：</p>
+        <!-- 
+            vue的指令：在vue中v-xxxx  来表示Vue的各个指令
+            v-text：给标签中插入文本内容，若文本中包含html片段，html标签不解析
+            v-html：给标签中插入文本内容，若文本中包含html片段，html标签会被解析
+        -->
+        <p v-text="msg">在vue中v-xxxx 来表示Vue的各个指令</p>
+        <p v-html="msg">在vue中v-xxxx 来表示Vue的各个指令</p>
+    </div>
+    <script>
+        // 创建Vue的实例
+        const app = Vue.createApp({
+            data(){
+                return{
+                    msg:"你好，今天<b>天气不错</b>"
+                }
+            }
+        });
+        // 将Vue与页面绑定
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

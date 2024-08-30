@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js库 -->
+    <script src="./vue/vue.js"></script>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #fa0;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: #0af;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 视图区域：用于展示数据的页面基本结构 -->
+    <div id="app">
+        <!-- 
+            v-if 条件渲染：
+
+        -->
+        <button v-on:click="flag=!flag">切换</button>
+        <div class="box1" v-if="flag"></div>
+        <div class="box2"  v-else></div>
+        
+        <p v-if="num == 1">111111</p>
+        <p v-else-if="num == 2">222222222</p>
+        <p v-else-if="num == 3">33333333333</p>
+        <p v-else>4444444444444444</p>
+    </div>
+    <script>
+        // 创建Vue的实例
+        const app = Vue.createApp({
+            data() {
+                return {
+                    flag: true,
+                    num:1
+                }
+            }
+        });
+        // 将Vue与页面绑定
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

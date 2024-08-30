@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js库 -->
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <!-- 视图区域：用于展示数据的页面基本结构 -->
+    <div id="app">
+        <dl>
+            <!-- 
+                在Vue的模板中有个虚拟的标签 <template> 它不会在页面上显示，
+                但是可以在配合vue的指令去完成某个结构渲染
+             -->
+            <template v-for="item in news">
+                <dt>{{item.title}}</dt>
+                <dd v-for="sub in item.subTitle">{{ sub }}</dd>
+            </template>  
+        </dl>
+        <!-- 
+            v-for的语法：
+            <标签名  v-for="(value,index) in 数组或对象"></标签名>
+            v-for：遍历数组
+                遍历的是数组：
+                    for中的参数，如果是一个变量，那么变量中存储的是数组的值
+                    for中的参数，如果是两个变量，那么第一个数组中的值，第二个是数组的下标
+
+            v-for注意事项：  
+                在使用v-for遍历的时候，一般都需要配合v-bing:key属性一起使用，提高二次渲染的性能
+        -->
+        <p v-for="(aaa,index) in arr" v-bind:key="index">{{ aaa }}</p>
+        <p v-for="(a,b) in arr">{{ a }} -- {{ b }}</p>
+        <!-- 
+            v-for ： 遍历对象
+             一个参数：参数表示对象中遍历出来的属性值
+             两个参数：第一个对象中的属性值，第二个是对象的属性名
+        -->
+        <p v-for="p in person">{{ p }}</p>
+        <p v-for="(p,i) in person">{{ i }}----{{ p }}</p>
+
+        <!-- 
+            v-for: 作为一个普通的for使用
+        -->
+        <h3 v-for="i in 10">{{ i }}</h3>    
+    </div>
+    <script>
+        // 创建Vue的实例
+        const app = Vue.createApp({
+            data(){
+                return{
+                    news:[
+                        {title:"体育新闻",subTitle:["国足谁也打不过","乒乓谁也打不过","跳水梦之队","女排的故事"]},
+                        {title:"八卦新闻",subTitle:["小日子与漂亮国搞事情","普京大帝"]},
+                    ],
+                    arr:[11,22,33,44,55],
+                    person:{
+                        name:"张无忌",
+                        age:18,
+                        sex:"女",
+                        address:"光明顶"
+                    }
+                }
+            }
+        });
+        // 将Vue与页面绑定
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

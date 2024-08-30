@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js库 -->
+    <script src="./vue/vue.js"></script>
+    <style>
+        .box1{
+            width: 400px;
+            height: 400px;
+            background-color: #f00;
+        }
+        .box2{
+            width: 300px;
+            height: 300px;
+            background-color: #fa0;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: #0af;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 视图区域：用于展示数据的页面基本结构 -->
+    <div id="app">
+       
+        <!-- 
+            事件修饰符：快速的去完成对事件的某些修饰
+
+        -->
+        <div class="box1" v-on:click="demo1">
+            <div class="box2" @click.self.stop="demo2">
+                <div class="box3" @click.once="demo3"></div>
+            </div>
+        </div>
+        <a href="https://www.baidu.com" @click.prevent="demo1">baidu</a>
+    </div>
+    <script>
+        // 创建Vue的实例
+        const app = Vue.createApp({
+            // 定义函数
+            methods: {
+                demo1: function () {
+                    console.log("box1");
+                },
+                demo2: function () {
+                    console.log("box2");
+                },
+                demo3: function () {
+                    console.log("box3");
+                },
+                
+            }
+        });
+        // 将Vue与页面绑定
+        app.mount("#app");
+    </script>
+</body>
+
+</html>
