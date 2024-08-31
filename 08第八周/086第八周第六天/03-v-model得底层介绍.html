@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="username" value="zhangsan">
+    <h2></h2>
+    <script>
+        let username=document.querySelector(".username").value;
+        let input = document.querySelector(".username");
+        console.log('input.value',input.value);
+        // 给input框绑定输入事件只要输入就会触发事件
+        input.addEventListener('input',function(){
+            //获取正在输入的值
+            console.log(input.value);
+            username=input.value;
+            // 将这个值放到h2中
+            document.querySelector('h2').innerHTML=username;
+        })
+    </script>
+</body>
+</html>

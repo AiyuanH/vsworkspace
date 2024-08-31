@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="../vue/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script> 
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@3"></script> -->
+    <!-- 确认是否路径问题 -->
+</head>
+
+<body>
+    <div id="app">
+        <p>{{sum}}</p>
+        <p>a:{{a}}b:{{b}}</p>
+        <p>a+b:{{sum}}</p>
+        <p>a+b:{{a+b}}</p>  
+    </div>
+    <script>
+        // 创键实例vue   我尼玛真的服了这个汉字但凡不加注释vue都会报错而且不会创建我的天哪
+        const app = Vue.createApp({
+            //vue的配置项：data时定义vue中所有的变量（基本类型，数组，对象）所有的遍历啊你都不可以在重名哦
+            data() {
+                return {
+                    //逗号隔开
+                    a: 10,
+                    b: 20,
+                }
+            },
+            //计算属性
+            // 这里书写函数函数名当作vue中的变量来使用
+            // 计算属性：计算属性的值，会根据依赖的数据变化而变化
+            // 相当于对data中的属性进行二次处理可以进行编写一些逻辑相关代码
+            computed: {
+                sum() {
+                    return this.a + this.b
+                },
+                demo:function(){
+                    return (this.a+this.b)%2?"奇数":"偶数";
+                }
+            }
+        })
+        app.mount("#app")
+    </script>
+</body>
+
+</html>

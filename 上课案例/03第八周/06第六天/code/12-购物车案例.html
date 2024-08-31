@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js库 -->
+    <script src="./vue/vue.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px 30px;
+            border: 1px solid #0af;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 视图区域：用于展示数据的页面基本结构 -->
+    <div id="app">
+        <table>
+            <tr>
+                <th><input type="checkbox" v-model="isCheckedAll" @change="checkedAllFn"></th>
+                <th>名称</th>
+                <th>价格</th>
+                <th>数量</th>
+                <th>小计</th>
+                <th>操作</th>
+            </tr>
+            <tr v-for="(item,index) in goodsArr" :key="index">
+                <td><input type="checkbox" v-model="item.isChecked" @change="singleCheckedFn"></td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.price }}</td>
+                <td>
+                    <button @click="item.count--" :disabled="item.count <= 1">-</button>
+                    {{ item.count }}
+                    <button @click="item.count++">+</button>
+                </td>
+                <td>{{ item.price * item.count }}</td>
+                <td><button :disabled="item.isChecked" @click="del(index)">删除</button></td>
+            </tr>
+            <tr>
+                <td>总价：</td>
+                <td colspan="5">{{ totalPrice }}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        // 创建Vue的实例
+        const app = Vue.createApp({
+            data() {
+                return {
+                    // 表示全选
+                    isCheckedAll:false,
+                    goodsArr: [
+                        { id: 1, name: "华为手表", price: 5, count: 1 , isChecked:true},
+                        { id: 2, name: "粗粮手机", price: 5, count: 10 , isChecked: false },
+                        { id: 3, name: "水果手机", price: 10, count: 1 , isChecked: true },
+                        { id: 4, name: "锤子手机", price: 10, count: 1 , isChecked: false }
+                    ]
+                }
+            },
+            methods:{
+                del(idx){
+                    if(this.goodsArr[idx].isChecked){
+                        alert("已勾选，不能删除")
+                    }else{
+                        this.goodsArr.splice(idx,1);
+                    }
+                },
+                // 处理全选
+                checkedAllFn(){
+                    // 遍历goodsArr数组，将其中isChecked的值修改与isCheckedAll相同
+                    for (let i = 0; i < this.goodsArr.length; i++) {
+                        this.goodsArr[i].isChecked = this.isCheckedAll;
+                    }
+                },
+                // 表格中的每个商品勾选的情况，来决定全选的checked是否被选中
+                singleCheckedFn(){
+                    // 遍历数组，判断如果商品的isChecked的值全部为true，它isCheckedAll的结果为true，否则为false
+                    /*
+                    let flag = true;
+                    for (let i = 0; i < this.goodsArr.length; i++) {
+                        if(!this.goodsArr[i].isChecked){
+                           flag = false;
+                           break;
+                        }
+                    }
+                    this.isCheckedAll = flag;
+                    */
+                   // every : 数组中的所有元素都满足某个条件，最后返回true，有任何一个不满足，返回false
+                   this.isCheckedAll = this.goodsArr.every(function(item){
+                    return item.isChecked;
+                   });
+                }
+            },
+            computed:{
+                totalPrice(){
+                    // 遍历数组，判断某个商品是否被勾选中，只有勾选的才计算总价
+                    let total = 0;
+                    for(let i = 0 ; i < this.goodsArr.length ; i++){
+                        if(this.goodsArr[i].isChecked){
+                            total = total + this.goodsArr[i].price * this.goodsArr[i].count;
+                        }
+                    }
+                    return total;
+                }
+            }
+        });
+        // 将Vue与页面绑定
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

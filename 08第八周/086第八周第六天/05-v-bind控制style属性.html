@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 操操操为啥你不写这个id="app"真是个傻蛋 -->
+        <p v-bind:style="styleValue">这是一个div</p>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                   styleValue: "width: 200px ;height: 200px; background-color: black"
+                }
+            }
+        });
+        app.mount("#app");
+    </script>
+</body>
+</html>
+

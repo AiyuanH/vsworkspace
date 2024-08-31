@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js库 -->
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+   
+    <div id="app">
+        <p>{{ add() }}</p>
+        <p>{{ add() }}</p>
+        <p>{{ add() }}</p>
+        <p>{{ sum }}</p>
+        <p>{{ sum }}</p>
+        <p>{{ sum }}</p>
+        <button @click="plus">加1</button>
+    </div>
+    <script>
+        /*
+            计算属性与函数的区别：
+            1、计算属性和函数他们在书写的时候，都一样，都是函数的格式
+            2、计算属性必须有返回值，函数不一定。
+            3、计算属性有缓存，函数没有，当计算属性管理的数据有变化的时候，会重新计算，然后再进行缓存
+        
+        */ 
+        const app = Vue.createApp({
+            data(){
+                return{                  
+                    a:10,
+                    b:20
+                }
+            },
+            methods:{
+                add(){
+                    console.log("add");                    
+                    return this.a + this.b;
+                },
+                plus(){
+                    this.a+=1;
+                }
+            },
+            computed:{               
+                sum(){
+                    console.log("sum");
+                    return this.a+this.b;
+                },
+                
+            }
+            
+        });
+        // 将Vue与页面绑定
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

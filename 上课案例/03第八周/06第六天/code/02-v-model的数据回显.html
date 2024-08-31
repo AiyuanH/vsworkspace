@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <form action="#">
+            <p>账号：<input type="text" placeholder="账号" v-model="account"></p>
+            <p>密码：<input type="password" placeholder="密码" v-model="password"></p>
+            <p>性别：
+                <input type="radio" v-model="sex" value="男"> 男
+                <input type="radio" v-model="sex" value="女"> 女
+            </p>
+            <p>爱好：
+                <input type="checkbox" v-model="like" value="唱"> 唱
+                <input type="checkbox" v-model="like" value="跳"> 跳
+                <input type="checkbox" v-model="like" value="rap"> rap
+            </p>
+            <p>地址：
+                <select v-model="address">
+                    <option value="北京">北京</option>
+                    <option value="tj">天津</option>
+                    <option >上海</option>
+                </select>
+            </p>
+            <p>描述：
+                <textarea v-model="desc"></textarea>
+            </p>
+        </form>
+        <button @click="showData">修改</button>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    account: "",
+                    password: "",
+                    sex: "",
+                    like: [],
+                    address: "",
+                    desc: ""
+                }
+            },
+            methods: {
+                showData() {
+                    // 如果需要使用vue实例中的其他数据，必须使用this.的方式
+                    this.account = "李四";
+                    this.password = "123";
+                    this.sex = "女";
+                    this.like = ["跳","rap"];
+                    this.address = "tj";
+                    this.desc = "自我介绍";
+                }
+            }
+        });
+
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

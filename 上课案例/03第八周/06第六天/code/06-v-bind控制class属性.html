@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js库 -->
+    <script src="./vue/vue.js"></script>
+    <style>
+        .box{
+            width: 200px;
+            height: 100px;
+            background-color: #fa0;
+        }
+        .box2{
+            width: 200px;
+            height: 100px;
+            background-color: #faf;
+        }
+        .box3{
+            width: 400px;
+            height: 100px;
+        }
+        .box4{
+            background-color: #0af;
+        }
+        .box5{
+            background-color: #fa0;
+        }
+        .box6{
+            background-color: #aaf;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 视图区域：用于展示数据的页面基本结构 -->
+    <div id="app">
+        <div class="box "></div>
+        <div :class="classString"></div>
+        <div :class="['box3','box4']"></div>
+        <div :class="classArr"></div>
+        <div :class="{'box3':true,'box5':flag,'box6':!flag}"></div>
+        <br>
+        <div :class="classObj"></div>
+        <button @click="flag=!flag">切换</button>
+        <div class='box3' :class="{'box5':flag,'box6':!flag}"></div>
+    </div>
+    <script>
+        // 创建Vue的实例
+        const app = Vue.createApp({
+            data() {
+                return {
+                    classString:"box2",
+                    classArr: ['box3', 'box2'],
+                    classObj: { 'box3': true, 'box5': true, 'box6': false },
+                    flag:true
+                }
+            },
+        });
+        // 将Vue与页面绑定
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

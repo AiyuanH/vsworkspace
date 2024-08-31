@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue/vue.js"></script>
+</head>
+
+<body>
+    <!-- vue数据驱动 -->
+    <!-- 尽可能通过vue指令让页面的数据都转成动态的数据然后通过js控制数据让页面动态渲染结果 -->
+    <div id="app">
+        <!-- v-bind:属性名="属性值";动态的给属性榜属性值
+         可简写为 :属性名="属性值 -->
+        <p>{{ username }} {{ age }} {{ sex }}</p>
+    </div>
+    <!-- 动态绑定属性值属性名 -->
+    <!-- v-bing:[属性名]="属性值" -->
+    <!-- 可简写为 :[属性名]="属性值" -->
+    <!-- 注意属性名不区分大小写，不能按照小驼峰书写方式 -->
+    <div id="app">
+        <p :[arrtName]="attrValur" :style="{ backgroundColor: attrValur }"></p>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    username: "李四",
+                    age: 18,
+                    sex: "男",
+                    arrtName: "class",
+                    attrValur: "active"
+
+                }
+            }
+        })
+        app.mount("#app")
+    </script>
+</body>
+
+</html>
+

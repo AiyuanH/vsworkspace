@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js库 -->
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <!-- 视图区域：用于展示数据的页面基本结构 -->
+    <div id="app">
+        <div style="width: 200px;height: 200px;background-color: #fa0;"></div>
+        <!-- v-bind 控制style属性 ： 值为字符串形式 -->
+        <div :style="styleValue"></div>
+        <!-- v-bind 控制style属性 ： 值为数组形式 -->
+        <div :style="['width: 200px','height: 200px','border:1px solid red']"></div>
+        <div :style="styleArr"></div>
+        <!-- v-bind 控制style属性 ： 值为对象形式 -->
+        <div :style="{'width':'200px','height':'100px','background-color':'#0a0'}"></div>
+        <div :style="styleObj"></div>
+        <!-- style属性和动态的style属性一起混合使用 -->
+        <div style="border: 1px solid #000; height: 200px;width: 200px;" :style="styObj"></div>
+        <div style="border: 1px solid rgb(36, 19, 195); height: 200px;width: 200px;" :style="{'width':w+'px'}"></div>
+        <button @click="w+=10">改变</button>
+    </div>
+    <script>
+        // 创建Vue的实例
+        const app = Vue.createApp({
+            data() {
+                return {
+                    styleValue:"width: 200px;height: 200px;background-color: #0af;",
+                    styleArr: ['width: 200px', 'height: 200px', 'border:1px solid blue'],
+                    styleObj: { 'width': '200px', 'height': '100px', 'background-color': '#aa0' },
+                    styObj:{ 'background-color': '#0af','width':'300px' },
+                    w:300
+                }
+            },
+        });
+        // 将Vue与页面绑定
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

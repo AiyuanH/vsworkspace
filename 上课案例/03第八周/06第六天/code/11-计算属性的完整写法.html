@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js库 -->
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+   
+    <div id="app">
+        姓：<input type="text" v-model="firstName"> <br>
+        名：<input type="text" v-model="lastName"><br>
+        全名：<input type="text" v-model="fullName"><br>
+    </div>
+    <script>
+        
+        const app = Vue.createApp({
+            data(){
+                return{                  
+                    firstName:"张",
+                    lastName:"三"
+                }
+            },
+           
+            computed:{  
+                /*             
+                fullName(){
+                    return this.firstName+this.lastName;
+                }
+                */
+               // 需要书写计算属性的完整写法
+               fullName:{
+                // 使用计算属性，会执行get方法
+                get:function(){
+                    console.log("get....");                    
+                    return this.firstName + this.lastName;
+                },
+                set:function(value){
+                    console.log("set....", value);
+                    // 截取第一个字符赋值firstName，剩下的字符赋值给lastName
+                    this.firstName = value.substring(0,1);
+                    this.lastName = value.substring(1);
+                    
+                }
+               }    
+                
+            }
+            
+        });
+        // 将Vue与页面绑定
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

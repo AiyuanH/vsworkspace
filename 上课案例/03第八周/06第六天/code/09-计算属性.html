@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js库 -->
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <!-- 视图区域：用于展示数据的页面基本结构 -->
+    <div id="app">
+        <p>{{a}}</p>
+        <p>{{b}}</p>
+        <p>{{a+b}}</p>
+        <p>{{(a+b)%2?'奇数':'偶数'}}</p>
+        <p>{{ sum }}</p>
+        <p>{{ demo }}</p>
+    </div>
+    <script>
+        // 创建Vue的实例
+        // Vue实例中书写的所有配置项的内容， 最终都会绑定Vue实例中
+        const app = Vue.createApp({
+            // vue的配置项:data中是定义Vue中的所有变量（基本类型、数组、对象）
+            data(){
+                return{
+                    // 在data中定义的变量，一般都直接赋值，无法给这个变量进行逻辑处理
+                    a:10,
+                    b:20
+                }
+            },
+            methods:{
+                fn(){}
+            },
+            // 计算属性
+            computed:{
+                /*
+                    在computed中，书写一个函数，函数名最终当作一个vue中的变量来使用，同时要求函数必须有返回值
+                    计算属性相当于对data中的属性，进行二次处理，可以编写一些逻辑相关的代码
+                */
+                sum:function(){
+                    return this.a+this.b;
+                },
+                demo(){
+                    return (this.a+this.b)%2 ? '奇数' : '偶数';
+                },
+            }
+            
+        });
+        // 将Vue与页面绑定
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

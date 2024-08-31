@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js库 -->
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <!-- 
+        vue:数据驱动
+        尽可能通过vue的指令，让页面的数据都转成动态的数据，然后通过js控制数据，达到页面动态渲染的效果。
+    -->
+    <div id="app">
+        <!-- 
+            <p username="zhangsan" age="20" sex="男"></p>
+            使用v-bind 让标签的属性名或者属性值也为动态的数据
+            v-bind:属性名="属性值"
+            v-bind 可以简写为:
+        -->
+        <p v-bind:username="username" v-bind:age="age" :sex="sex"></p>
+        <button @click="changeImg">切换图片</button>
+        <img v-bind:src="img1">
+        <!-- <div neuedu="东软天津"></div> -->
+        <!-- 
+            v-bind:[属性名]="属性值"
+            注意：属性名不区分大小写，不能按照小驼峰方式书写
+         -->
+        <div v-bind:[attr_name]="attrValue">123</div>
+    </div>
+    <script>
+        // 创建Vue的实例
+        const app = Vue.createApp({
+            data() {
+                return {
+                    username: "李四",
+                    age: 20,
+                    sex: "男",
+                    num: 0,
+                    img1: "https://img0.baidu.com/it/u=2936523526,719751699&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1725210000&t=8e84e2c133f99f2c1d021982b4bc2714",
+                    attr_name: "neuedu",
+                    attrValue: "东软天津"
+
+                }
+            },
+            methods: {
+                changeImg() {
+                    if (this.num % 2) {
+                        this.img1 = "https://img0.baidu.com/it/u=2936523526,719751699&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1725210000&t=8e84e2c133f99f2c1d021982b4bc2714"
+                    } else {
+                        this.img1 = "https://img2.baidu.com/it/u=233822006,971722391&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1725210000&t=6aca9004817e49408030ea04993cc913"
+                    }
+                    this.num++;
+                }
+            },
+        });
+        // 将Vue与页面绑定
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

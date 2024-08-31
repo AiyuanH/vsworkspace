@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3 Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script> <!-- 确保加载 Vue 3 -->
+</head>
+<body>
+    <div id="app">
+        <!-- 双向绑定跟data完成而不跟computed绑定 -->
+        <input type="text" v-model="firstName">
+        <input type="text" v-model="lastName">
+        <input type="text" name="" id="" v-model="fullName">
+        
+        <!-- 姓：{{firstName}}
+        名：{{lastName}}
+       性名:{{fullName}} -->
+    </div>
+    <script>
+        // 计算属性与函数的区别
+        // 1.计算属性和函数他们在书写的时候都一样都是函数的格式
+        // 2.计算属性必须又返回值函数不一定
+        // 3.计算属性有缓存，函数没有缓存
+        const app = Vue.createApp({
+            data() {
+                return {
+                    firstName:"张三",
+                    lastName:"李四",
+                }
+            },
+          
+            computed: {
+              fullName:{
+                // return this.firstName + " " + this.lastName;
+                // return `${this.firstName} ${this.lastName}`,
+                get:function(){
+                    return this.firstName + " " + this.lastName;
+                }
+              }
+            }
+        });
+
+        app.mount("#app");
+    </script>
+</body>
+</html>

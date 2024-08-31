@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js库 -->
+    <script src="./vue/vue.js"></script>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        th,td{
+            padding: 10px 20px;
+            border: 1px solid #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 视图区域：用于展示数据的页面基本结构 -->
+    <div id="app">
+        <h3>学籍管理系统</h3>
+        <hr>
+        <p>姓名：<input type="text" v-model="stuName"></p>
+        <p>姓名：<input type="text" v-model="stuAge"></p>
+        <p>姓名：<input type="text" v-model="stuSex"></p>
+        <p>姓名：<input type="text" v-model="stuTel"></p>
+        <button @click="saveData">保存</button>
+        <hr>
+        <table>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>手机</th>
+                <th>操作</th>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>20</td>
+                <td>男</td>
+                <td>11111</td>
+                <td><button>删除</button></td>
+            </tr>
+            <tr v-for="(stu , index) in stuArr">
+                <td>{{ stu.stuName}}</td>
+                <td>{{ stu.stuAge}}</td>
+                <td>{{ stu.stuSex}}</td>
+                <td>{{ stu.stuTel}}</td>
+                <td><button @click="del(index)">删除</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        // 创建Vue的实例
+        const app = Vue.createApp({
+            data(){
+                return{
+                    stuName:"",
+                    stuAge:"",
+                    stuSex:"",
+                    stuTel:"",
+                    stuArr:[]
+                }
+            },
+            methods: {
+                saveData(){
+                    if(this.stuName == "" || this.stuAge < 1 || this.stuSex == "" || this.stuTel == ""){
+                        alert("请输入完整信息");
+                        return;
+                    }
+                    // 点击保存，将数据添加到数组中
+                    this.stuArr.push({ stuName: this.stuName, stuAge: this.stuAge, stuSex: this.stuSex, stuTel: this.stuTel });
+                    this.stuName = "";
+                    this.stuAge ="" ;
+                    this.stuSex = "";
+                    this.stuTel = "";
+                },
+                del(idx){
+                    this.stuArr.splice(idx,1);
+                }
+            },
+        });
+        // 将Vue与页面绑定
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3 Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script> <!-- 确保加载 Vue 3 -->
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            width: 100px;
+            text-align: center;
+            border: 1px solid #0af;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <table>
+            <tr>
+                <th><input type="checkbox" v-model="isSelectedAll"></th>
+                <th>名称</th>
+                <th>价格</th>
+                <th>数量</th>
+                <th>小计</th>
+                <th>操作</th>
+            </tr>
+            <!-- 你没加这个v-for哦然后你的页面为空注意！！1 -->
+            <tr v-for="item in goodsArr" :key="item.id" v-model="selected">
+                <td><input type="checkbox"></td>
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td>
+                    <!-- ::::::::::::::::::disabled="item.count<=1" -->
+                    <button @click="item.count--" :disabled="item.count <= 0">-</button>
+                    {{item.count}}
+                    <!-- ::::::::::::::::::disabled="item.count>=10" -->
+                    <button @click="item.count++">+</button>
+                </td>
+
+                <td>{{item.count*item.price}}</td>
+                <td><button>删除</button></td>
+            </tr>
+            <tr>
+                <td>总价：</td>
+                <td colspan="5">sdf </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    isSelectedAll: false,
+                    goodsArr: [
+                        { id: 1, name: "华为手表", price: 666, count: 1, selected: false },
+                        { id: 2, name: "华为手机", price: 6661, count: 1, selected: false },
+                        { id: 3, name: "华为手环", price: 6662, count: 1, selected: false },
+                        { id: 4, name: "华为平板", price: 6663, count: 1, selected: false },
+                        { id: 5, name: "华为笔记本", price: 6664, count: 1, selected: false },
+                        { id: 6, name: "华为耳机", price: 6665, count: 1, selected: false },
+                    ],
+                }
+            },
+        });
+
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

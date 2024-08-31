@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script>
+        创键实例vue
+        const app = Vue.createApp({
+            //vue的配置项：data时定义vue中所有的变量（基本类型，数组，对象）
+            data() {
+                return {
+                    //逗号隔开
+                    a: 10,
+                    b: true,
+                    c: "abc",
+                    //数组
+                    d: ["a", "b", "c"],
+                    //对象
+                    e: {
+                        name: "zhangsan",
+                        age: 18
+                    },
+                    //函数
+                    f: function () { },
+                    //方法
+                    g: function () { },
+                    //变量
+                    h: undefined,
+                }
+            },
+            //定义vue中的函数和方法
+            methods: {
+                demo: function () { },
+                demo2() { },
+            },
+        })
+        app.mount("#app")
+    </script>
+</body>
+
+</html>

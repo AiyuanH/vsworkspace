@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue/vue.js"></script>
+</head>
+
+<body>
+
+    <!-- 视图区域展示数据页面基础结构 -->
+    <div id="app">
+
+        <form action="">
+            账号：<input type="text" v-model="account"><br>
+            密码：<input type="password" v-model="password"><br>
+            性别：
+            <!-- 这个只能选一个 -->
+            <input type="radio" v-model="sex" value="男">男
+            <input type="radio" v-model="sex" value="女">女<br>
+            爱好：
+            <!-- 这个可以选多个需要数组形式 -->
+            <!-- 
+            这个写v-model就可以不写name了因为普通表单必须写name属性key：value而v-model="hobby"直接绑定
+              针对input标签，select标签，textarea标签完成数据得双向绑定设置和获取数据 
+            -->
+            <input type="checkbox" v-model="hobby" value="唱">唱
+            <input type="checkbox" v-model="hobby" value="跳">跳
+            <input type="checkbox" v-model="hobby" value="rap">rap<br>
+            地址：<select v-model="address">
+                <option value="">请选择</option>
+                <option value="changsha">长沙</option>
+                <option value="wuhan">武汉</option>
+                <option value="shanghai">上海</option>
+                <option value="shenzhen">深圳</option>
+            </select><br>
+            描述：<textarea v-model="description" cols="30" rows="10"></textarea><br>
+        </form>
+        当点击这个
+        <button @click="showData" >修改</button><br>
+    </div>
+    <script>
+        //创建vue的实例
+        const app = Vue.createApp({
+            data() {
+                return {
+                    account: "zaaaa",
+                    password: "",
+                    sex: "",
+                    hobby: [],
+                    address: "",
+                    description: ""
+                }
+            },
+            methods:{
+                    showData(){
+                        // this代表app需要调用的vue实例
+                        this.account="zhangsan";
+                        console.log(this.account);
+                        this.password="123456";
+                        console.log(this.password);
+                        this.sex="男";
+                        console.log(this.sex);
+                        this.hobby=["唱","跳"];
+                        console.log(this.hobby);
+                        this.address="changsha";
+                        console.log(this.address);
+                        this.description="我是一个程序员";
+                        console.log(this.description);
+                    }
+                }
+            //定义函数
+            // methods: {
+            //     return "demo";
+            // }
+        });
+        //准备数据定义变量
+        app.mount("#app");
+
+    </script>
+
+</body>
+
+</html>
+<!-- mvvm双向绑定m是modelv是viewvm是viewmodel -->
