@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue/vue.js"></script>
+    <style>
+        table{
+        border-collapse:collapse;
+    }
+    th,td{
+        padding:10px 20px;
+        border:1px solid #f2f2f2;
+        text-align: center;
+        vertical-align: middle;
+
+    }
+    </style>
+    
+</head>
+<body>
+    <!--
+        首先呢创建一个块来放这个输入框
+        1. 创建一个div，让它有一个id='app'的自定义属性
+        2. 在div中书写一个h2，一个hr，四个input，一个button
+        3. 在div中书写一个table
+        4. table中有一个tr，tr中有五个th
+        5. table中有多个tr，tr中有五个td
+        6. td中可以使用v-for指令循环渲染数据
+        7. td中可以使用{{}}插值表达式显示数据
+        8. td中可以使用@事件修饰符来绑定事件
+    -->
+    <div id="app">
+        <h2>血迹管理系统</h2>
+        <hr>
+        姓名：<input type="text" class="stuName">
+        <br>
+        年龄：<input type="text" class="stuAge">
+        <br>
+        性别：<input type="text" class="stuSex">
+        <br>
+        手机：<input type="text" class="stuPhone">
+        <br>
+        <hr>
+        <button @click="saveData">保存</button>
+        <table>
+
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>手机</th>
+                <th>操作</th>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>20</td>
+                <td>男</td>
+                <td>11111</td>
+                <td><button>删除</button></td>
+            </tr>
+            <tr v-for="(stu,index) in stuArr">
+                <td>{{ stu.stuName }}</td>
+                <td>{{ stu.stuAge }}</td>
+                <td>{{ stu.stuSex }}</td>
+                <td>{{ stu.stuPhone }}</td>
+                <td><button @click="del(index)">删除</button></td>
+            </tr>
+        </table>
+    </div>
+<script>
+    const app=Vue.createApp({
+        data(){
+            return{
+                stuArr:[]
+            }
+        },
+        methods:{
+            saveData(){
+                const stuName=document.querySelector('.stuName').value
+                const stuAge=document.querySelector('.stuAge').value
+                const stuSex=document.querySelector('.stuSex').value
+                const stuPhone=document.querySelector('.stuPhone').value
+                const obj={
+                    stuName,
+                    stuAge,
+                    stuSex,
+                    stuPhone
+                }
+                this.stuArr.push(obj)
+            },
+            del(index){
+                this.stuArr.splice(index,1)
+            }
+        }
+    })
+    app.mount('#app')
+</script>
+    
+</body>
+

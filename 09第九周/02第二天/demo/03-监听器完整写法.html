@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <!-- 需求是根据输入的姓名从数组中过滤出符合要求的姓名并渲染 -->
+
+        请输入姓 <input type="text" v-model="name">
+        <h3>符合条件的姓名</h3>
+
+        <p v-for="item in newNames" :key="index">{{item}}</p>
+
+    </div>
+    <script>
+
+        const app = Vue.createApp({
+            data() {
+                return {
+                    name: "",
+                    names: ['aaa', 'bbb', 'ccc', 'ddd', 'eee', 'fff'],
+                    newNames: [],
+                }
+            },
+            watch: {
+                name: {
+                    //标识监听器的要执行的方法
+                    handler: function (newVal, oldVal) {
+                        //判新的值由没有
+                        if (newVal) {
+                            this.newNames.splice(0, this.newNames.length);
+                            for (let i = 0; i < this.names.length; i++) {
+                                if (this.names[i].startsWith(newVal)) {
+                                    this.newNames.push(this.names[i])
+                                }
+                            }
+                        } else {
+                            //能不能看清啊卧槽单词单词
+                            this.newNames.push(...this.names);
+                        }
+
+                    },
+                    //标识监听器一加载就执行
+                    immediate: true
+                }
+            }
+        })
+        app.mount("#app");
+    </script>
+</body>
+<!-- zhege budui -->
+
+</html>
+
+

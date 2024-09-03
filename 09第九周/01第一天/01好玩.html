@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person={
+            name:["box","smith"],
+            age:32,
+            bio:function(){
+                //这个是输出各个属性和对象的
+                console.log(`${this.name[0]} ${this.name[1]} 现在 ${this.age}了}`);
+                
+            },
+            introdiceSelf:function(){
+                console.log(`我是${this.name[0]}`);
+                
+            }
+        }
+    </script>
+</body>
+</html>

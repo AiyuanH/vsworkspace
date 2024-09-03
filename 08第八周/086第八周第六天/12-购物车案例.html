@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue 3 Test</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script> <!-- 确保加载 Vue 3 -->
+    <script src="../vue/vue.js"></script><!-- 确保加载 Vue 3 -->
     <style>
         table {
             border-collapse: collapse;
@@ -25,50 +24,112 @@
     <div id="app">
         <table>
             <tr>
-                <th><input type="checkbox" v-model="isSelectedAll"></th>
+                <!-- 复选框全选 -->
+                <th><input type="checkbox" v-model="isCheckAll" @change="checkedAllFn"></th>
+                <!-- 商品名称 -->
                 <th>名称</th>
+                <!-- 商品价格 -->
                 <th>价格</th>
+                <!-- 商品数量 -->
                 <th>数量</th>
+                <!-- 小计 -->
                 <th>小计</th>
+                <!-- 操作按钮 -->
                 <th>操作</th>
             </tr>
-            <!-- 你没加这个v-for哦然后你的页面为空注意！！1 -->
-            <tr v-for="item in goodsArr" :key="item.id" v-model="selected">
-                <td><input type="checkbox"></td>
+            <!--  v-for渲染每个商品项 -->
+            <tr v-for="item in goodsArr" :key="item.id">
+                <!-- 复选框 -->
+                <td><input type="checkbox" v-model="item.isChecked" @change="singleCheckedFn"></td>
+                <!-- 商品名称 -->
                 <td>{{item.name}}</td>
+                <!-- 商品价格 -->
                 <td>{{item.price}}</td>
+                <!-- 商品数量 -->
                 <td>
-                    <!-- ::::::::::::::::::disabled="item.count<=1" -->
+                    <!--  -  -  +  -  +  -->
                     <button @click="item.count--" :disabled="item.count <= 0">-</button>
                     {{item.count}}
-                    <!-- ::::::::::::::::::disabled="item.count>=10" -->
                     <button @click="item.count++">+</button>
                 </td>
-
+                <!-- 小计 -->
                 <td>{{item.count*item.price}}</td>
-                <td><button>删除</button></td>
+                <!-- 删除按钮 -->
+                <td><button @click="del(item)">删除</button></td>
             </tr>
             <tr>
+                <!-- 总价 -->
                 <td>总价：</td>
-                <td colspan="5">sdf </td>
+                <!--  colspan="5"  5  -->
+                <td colspan="5">{{totalPrice}}</td>
             </tr>
         </table>
     </div>
     <script>
         const app = Vue.createApp({
+            // data  data  data
             data() {
                 return {
-                    isSelectedAll: false,
+                    //  1 
+                    isCheckedAll: false,
+                    //   goodsArr  6 
                     goodsArr: [
-                        { id: 1, name: "华为手表", price: 666, count: 1, selected: false },
-                        { id: 2, name: "华为手机", price: 6661, count: 1, selected: false },
-                        { id: 3, name: "华为手环", price: 6662, count: 1, selected: false },
-                        { id: 4, name: "华为平板", price: 6663, count: 1, selected: false },
-                        { id: 5, name: "华为笔记本", price: 6664, count: 1, selected: false },
-                        { id: 6, name: "华为耳机", price: 6665, count: 1, selected: false },
+                        { id: 1, name: "华为手表",  price: 6, count: 1, isChecked: false },
+                        { id: 2, name: "华为手机",  price: 1, count: 1, isChecked: false },
+                        { id: 3, name: "华为手环",  price: 2, count: 1, isChecked: false },
+                        { id: 4, name: "华为平板",  price: 3, count: 1, isChecked: false },
+                        { id: 5, name: "华为笔记本" ,price: 4, count: 1, isChecked: false },
+                        { id: 6, name: "华为耳机",  price: 5, count: 1, isChecked: false },
                     ],
+                    //  0 
+                   
                 }
             },
+            // methods  methods  methods
+            methods: {
+                //  del  del  del
+                del(item) {
+                    //  1 
+                    if (item.isChecked) {
+                        alert(" 已勾选，不能删除")
+                    } else {
+                        //  1  1  item   goodsArr
+                        this.goodsArr.splice(this.goodsArr.indexOf(item), 1)
+                    }
+                },
+                //  singleCheckedFn  singleCheckedFn  singleCheckedFn
+                singleCheckedFn() {
+                    //  1  1  1  1  1 
+                    this.isSelectedAll = this.goodsArr.every(item => item.isChecked)
+
+                },
+                //  checkedAllFn  checkedAllFn  checkedAllFn
+                checkedAllFn() {
+                    //  1  1  1  1  1 
+                    this.goodsArr.forEach(item => {
+                        item.isChecked = this.isCheckAll
+                    })
+                }
+
+            },
+            //  computed  computed  computed
+            computed: {
+                //  totalPrice  totalPrice  totalPrice
+                totalPrice() {
+                    //  0 
+                    let sum = 0;
+                    //  1  1  1  1  1 
+                    this.goodsArr.forEach(item => {
+                        if (item.isChecked) {
+                            //  1  1  1  1  1 
+                            sum += item.price * item.count
+                        }
+                    })
+                    
+                     
+                    return sum
+                }
+            }
         });
 
         app.mount("#app");

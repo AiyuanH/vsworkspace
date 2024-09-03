@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script src="../vue/vue.js"></script>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: #fa0;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 100px;
+            background-color: #faf;
+        }
+
+        .box3 {
+            width: 400px;
+            height: 100px;
+        }
+
+        .box4 {
+            background-color: #0af;
+        }
+
+        .box5 {
+            background-color: #fa0;
+        }
+
+        .box6 {
+            background-color: #aaf;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1. classString: 字符串形式  -->
+        <div class="box"></div>
+        <div :class="classString"></div>
+        <!-- 2. classArr: 数组形式  -->
+        <div :class="['box3','box4']"></div>
+        <!-- 3. classObj: 对象形式  -->
+        <div :class="classArr"></div>
+        <div :class="{'box3':true,'box5':flag,'box6':!flag}"></div>
+        <br>
+        <div :class="classObj"></div>
+        <!-- 4. 事件  -->
+        <button @click="flag=!flag">切换</button>
+        <!-- 5.  style和class一起使用  -->
+        <div class="box3" :class="{'box5':flag,'box6':!flag}"></div>
+        <!-- 我草泥马但凡你这个flag后面有'这个单引号就整个页面没有反应为空白 -->
+    </div>
+    <script>
+        
+        const app = Vue.createApp({
+            data() {
+                return {
+                    classString: "box2",
+                    classArr: ["box3", "box2"],
+                    classObj: {
+                        "box3": true,
+                        "box5": true,
+                        "box6": false
+                    },
+                    flag: true
+                }
+            },
+        });
+        app.mount("#app");
+
+    </script>
+</body>
+</html>
+

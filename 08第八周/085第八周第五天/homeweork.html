@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生信息显示</title>
+    <script src="../vue/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>成绩</th>
+            </tr>
+            <tr v-for="student in students" :key="student.id">
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.score }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    students: [
+                        { id: 1, name: '张三', score: 85 },
+                        { id: 2, name: '李四', score: 90 },
+                        { id: 3, name: '王五', score: 78 },
+                        { id: 4, name: '赵六', score: 92 },
+                        { id: 5, name: '孙七', score: 88 },
+                        { id: 6, name: '周八', score: 76 },
+                        { id: 7, name: '吴九', score: 89 },
+                        { id: 8, name: '郑十', score: 91 },
+                        { id: 9, name: '冯十一', score: 82 },
+                        { id: 10, name: '陈十二', score: 79 }
+                    ]
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
